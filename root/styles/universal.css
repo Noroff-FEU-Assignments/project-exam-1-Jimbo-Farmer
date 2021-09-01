@@ -1,0 +1,177 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #027CC1;
+    color: white;
+    margin: 0;
+    position: relative;
+}
+
+header {
+    padding: 24px 5% 0 5%;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    background-color: #303030;
+    /* height: 110px;
+    transition: all 0.8s ease-out; */
+}
+
+.main-title {
+    font-size: 1.75rem; 
+    margin: 0;
+}
+
+.main-title span {
+    font-weight: bold;
+    color: #FACE3C;
+}
+
+.tagline {
+    margin-top: 8px;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+#hamburger {
+    position: absolute;
+    right: 5%;
+    top: 24px;
+    width: 74px;
+    height: 66px;
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 10px;
+    z-index: 50;
+}
+
+#burger-top, .burger-middle, #burger-bottom{
+    width: 45px;
+    height: 7px;
+    background-color: #FACE3C;
+    border-radius: 3px;
+    position: relative;
+    left: 14px;
+    top: 14px;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.burger-middle{
+    top: 22px;
+}
+.burger-middle.two{
+    top: 15px;
+}   
+#burger-bottom{
+    top: 23px;
+}
+
+/* -----When menu is open------ */
+
+.open .burger-middle.one{
+    rotate: 39deg;   
+}
+.open .burger-middle.two{
+    rotate: -39deg;   
+}
+.open #burger-top, .open #burger-bottom {
+    opacity: 0;
+}
+
+.nav-items {
+    position: absolute;
+    height: 100vh;
+    background-color: #303030;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+    padding-top: 140px;
+}
+
+.nav-items a, .nav-items .search-container {
+    display: block;
+    width: 60%;
+    max-width: 260px;
+    margin-left: 20%;                     /*increase in media query-------------------------*/
+    padding: 30px 0px 30px 20px;
+    margin-top: 2px;
+    font-size: 1.3125rem;
+    border: 1px solid #B7B7B7;
+}
+
+.nav-items a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: all 0.2s linear;
+}
+
+.nav-items #search-go:hover{
+    background-color: #FACE3C;
+    cursor: pointer;
+}
+
+.nav-items .search-container {
+    font-size: 0;
+    position: relative;
+}
+
+#search-field{
+    width: 90%;
+    display: inline;
+    font-size: 1.3125rem;
+    padding: 4px 0px 4px 2px;
+    border: none;
+    -webkit-appearance: none;
+}
+
+#search-field:focus {
+    outline: unset;
+    border-bottom: 2px solid #FACE3C;
+}
+
+#search-go{
+    border: unset;
+    position: absolute;
+    background-color: #027CC1;
+    right: 9%;
+    font-size: 0;
+    padding: 2px 5px;
+}
+#search-go img{
+    height: 29px;
+}
+
+.hidden {
+    left: -800px;                           /*lose hamburger at 800px width*/
+}
+
+.nav-items .here{
+    border-color: #FACE3C;
+}
+
+/* ----------------------------main styles---------------------------------------- */
+
+main{
+    padding: 24px 0;
+}
+
+.banner-image img{
+    margin-top: -24px;
+    height: 200px;
+    display: none;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding: 0 5%;
+}
+
+.bottom-banner-image img {
+    width: 100%;
+    
+}

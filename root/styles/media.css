@@ -1,0 +1,41 @@
+
+
+@media (min-width: 800px){
+    #hamburger {
+        display: none;
+    }
+    .hidden {
+        left: 0;
+    }
+    .nav-items {
+        height: unset;
+        position: relative;
+        padding-top: 20px;
+    }
+    .nav-items a, .nav-items .search-container{
+        margin-left: 0;
+        width: unset;
+    }
+    body {
+        display: flex;
+    }
+    header {
+        flex: 1;
+        max-width: 300px;
+        min-height: 100vh;
+    }
+    main {
+        flex: 3;
+        overflow: hidden;
+    }
+    .banner-image img{
+        display: unset;
+        
+    }
+}
+
+@media (min-width: 1000px){
+    main {
+        flex: 4;
+    }
+}
