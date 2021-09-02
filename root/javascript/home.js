@@ -1,5 +1,5 @@
 const latestPosts = document.querySelector(".latest-posts")
-const url = "http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
+const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 
 
 const previousButton = document.querySelector(".previous");
@@ -36,14 +36,17 @@ async function getPosts(){
         
         function generateHtml(){
             latestPosts.innerHTML =``;
-            if((firstTile + tiles)>output.length){
+            if((firstTile + tiles) >= output.length){
                 firstTile = output.length - tiles;
                 nextButton.disabled = true;
-            }
-            if(firstTile < 0){
+            } else if(firstTile <= 0){
                 firstTile = 0;
                 previousButton.disabled = true;
+            } else {
+                nextButton.disabled = false;
+                previousButton.disabled = false;
             }
+
             for(let i = firstTile; i < (firstTile + tiles); i++){
                 latestPosts.innerHTML += `<div class=post-tile>
                 <h2>${output[i].title.rendered}</h2>
@@ -52,28 +55,20 @@ async function getPosts(){
                 <a href="specificblog.html?id=${output[i].id}">Read More</a>
                 </div>`
             }
-            if(firstTile===0){
-                previousButton.disabled = true;
-            } else {
-                previousButton.disabled = false;
-            }
-            if((firstTile + tiles) >= output.length){
-                nextButton.disabled = true;
-            } else {
-                nextButton.disabled = false;
-            }
         }
-        generateHtml();    
+        generateHtml();  
+        
         nextButton.addEventListener("click", function(){
             firstTile += tiles;
             generateHtml();
         })
         
-
         previousButton.addEventListener("click", function(){
             firstTile -= tiles;
             generateHtml();
         })
+
+
         
         
     } catch (error) {
