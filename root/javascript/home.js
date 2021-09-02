@@ -1,20 +1,81 @@
 const latestPosts = document.querySelector(".latest-posts")
-const url = "http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed"
+const url = "http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
+
+
+const previousButton = document.querySelector(".previous");
+const nextButton = document.querySelector(".next");
+
+let w = window.innerWidth;
+let tiles;
+let firstTile;
+
+if(w < 600){
+    tiles = 1;
+} else if(w >= 600 && w < 1000){
+    tiles = 2;
+} else if(w >= 1000 && w < 1400){
+    tiles = 3;
+} else {
+    tiles = 4;
+}
+
+window.addEventListener('resize', function(){
+    let reload = setTimeout(function(){
+        window.location.reload();
+    }, 1000);
+    reload();
+});
+
 
 async function getPosts(){
     try { 
         const response = await fetch(url);
         const output = await response.json();
-        for(let i = 0; i < output.length; i++){
-            latestPosts.innerHTML += `<div class=post-tile>
-            <h2>${output[i].title.rendered}</h2>
-            <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">
-            <p>${output[i].excerpt.rendered}</p>
-
-            </div>`
-        }
+        console.log(output);
+        firstTile = 0;
         
-        console.log(output[0]._embedded['wp:featuredmedia']['0'].source_url)
+        function generateHtml(){
+            latestPosts.innerHTML =``;
+            if((firstTile + tiles)>output.length){
+                firstTile = output.length - tiles;
+                nextButton.disabled = true;
+            }
+            if(firstTile < 0){
+                firstTile = 0;
+                previousButton.disabled = true;
+            }
+            for(let i = firstTile; i < (firstTile + tiles); i++){
+                latestPosts.innerHTML += `<div class=post-tile>
+                <h2>${output[i].title.rendered}</h2>
+                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">
+                <p>${output[i].excerpt.rendered}</p>
+                <a href="specificblog.html?id=${output[i].id}">Read More</a>
+                </div>`
+            }
+            if(firstTile===0){
+                previousButton.disabled = true;
+            } else {
+                previousButton.disabled = false;
+            }
+            if((firstTile + tiles) >= output.length){
+                nextButton.disabled = true;
+            } else {
+                nextButton.disabled = false;
+            }
+        }
+        generateHtml();    
+        nextButton.addEventListener("click", function(){
+            firstTile += tiles;
+            generateHtml();
+        })
+        
+
+        previousButton.addEventListener("click", function(){
+            firstTile -= tiles;
+            generateHtml();
+        })
+        
+        
     } catch (error) {
         
     }
