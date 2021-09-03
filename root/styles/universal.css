@@ -127,7 +127,7 @@ header {
 }
 
 #search-field{
-    width: 90%;
+    width: 80%;
     display: inline;
     font-size: 1.3125rem;
     padding: 4px 2px 4px 2px;
@@ -146,9 +146,11 @@ header {
 
 #search-go{
     border: unset;
-    position: absolute;
+    display: inline;
+    position: relative;
     background-color: white;
-    right: 9%;
+    /* right: 9%; */
+    top: 4px;
     font-size: 0;
     padding: 4px 4px;
 }
