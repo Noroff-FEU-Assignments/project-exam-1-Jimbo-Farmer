@@ -4,6 +4,9 @@ body {
     color: white;
     margin: 0;
     position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 header {
