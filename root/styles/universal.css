@@ -146,6 +146,9 @@ header {
 }
 
 #search-go{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     border: unset;
     display: inline;
     color: white;
