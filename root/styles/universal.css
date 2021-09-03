@@ -119,6 +119,7 @@ header {
 .nav-items .search-container {
     font-size: 0;
     position: relative;
+    border: none;
     padding: 26px 0px 26px 20px;
 }
 
