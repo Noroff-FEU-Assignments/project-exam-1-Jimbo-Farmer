@@ -27,7 +27,8 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 100;
-    animation: expand 0.5s;    
+    animation: expand 0.5s;   
+    animation-timing-function: ease-out; 
 }
 
 .modal-box.open img {
@@ -45,9 +46,7 @@ p {
 }
 
 @keyframes expand {
-    from {
-        transform: scale(0);
-    } to {
-        transform: scale(1);
-    }
+    0% {transform: scale(0);} 
+    100% {transform: scale(1);}
 }
+
