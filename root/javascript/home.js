@@ -20,10 +20,13 @@ if(w < 600){
 }
 
 window.addEventListener('resize', function(){
-    let reload = setTimeout(function(){
-        window.location.reload();
-    }, 1000);
-    reload();
+    if(w>=600){
+        let reload = setTimeout(function(){
+            window.location.reload();
+        }, 1000);
+        reload();
+    }
+    
 });
 
 
