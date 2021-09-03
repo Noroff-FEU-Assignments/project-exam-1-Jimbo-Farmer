@@ -136,6 +136,7 @@ header {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    vertical-align: top;
         
 }
 
@@ -149,8 +150,6 @@ header {
     display: inline;
     position: relative;
     background-color: white;
-    /* right: 9%; */
-    top: 4px;
     font-size: 0;
     padding: 4px 4px;
 }
