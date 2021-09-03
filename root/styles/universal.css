@@ -11,8 +11,6 @@ header {
     text-transform: uppercase;
     border-bottom: 2px solid white;
     background-color: #303030;
-    /* height: 110px;
-    transition: all 0.8s ease-out; */
 }
 
 .main-title {
@@ -111,7 +109,7 @@ header {
 }
 
 .nav-items #search-go:hover{
-    background-color: #FACE3C;
+    background-color: #027CC1;
     cursor: pointer;
 }
 
@@ -124,9 +122,10 @@ header {
     width: 90%;
     display: inline;
     font-size: 1.3125rem;
-    padding: 4px 0px 4px 2px;
+    padding: 4px 2px 4px 2px;
     border: none;
     -webkit-appearance: none;
+    
 }
 
 #search-field:focus {
@@ -137,7 +136,7 @@ header {
 #search-go{
     border: unset;
     position: absolute;
-    background-color: #027CC1;
+    background-color: white;
     right: 9%;
     font-size: 0;
     padding: 2px 5px;
