@@ -57,4 +57,35 @@
     .post-tile{
         width: 22%;
     }
+    h1, .main-title {
+        font-size: 2.1875rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    p {
+        font-size: 1.3125rem;
+    }
+    a {
+        font-size: 1.3125rem;
+    }
+    .full-blog {
+        padding: 24px;
+    }
+    .full-blog .wp-block-image {
+        max-width: 33%;
+    }
+    .full-blog .modal-box.open {
+        max-width: unset;
+        text-align: center;
+    }
+    .full-blog .modal-box.open img {
+        width: unset;
+        max-height: 90vh;
+        top: 5vh;
+    }
+    .post-tile h2 {
+        min-height: 64px;
+        margin-bottom: 16px;
+    }
 }

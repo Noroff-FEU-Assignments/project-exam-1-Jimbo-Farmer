@@ -1,0 +1,50 @@
+.full-blog {
+    color: black;
+    background-color: white;
+    margin: 24px 24px 0 0;
+    padding: 12px;
+}
+
+.wp-block-image {
+    max-width: 50%;
+    
+    margin: 16px auto;
+}
+
+.wp-block-image img {
+    width: 100%;
+    height: unset;
+}
+
+.modal-box.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: unset;
+    margin: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    animation: expand 0.5s;
+}
+
+.modal-box.open img {
+    position: relative;
+    top: 25%;
+    width: 90%;
+    margin-left: 5%;
+    border: 2px solid white;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+    } to {
+        transform: scale(1);
+    }
+}

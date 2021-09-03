@@ -1,9 +1,20 @@
-.latest-posts {
+.posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 24px;
-    
+    margin: 24px;  
+}
+
+.blog-list .posts {
+    justify-content: unset;
+}
+
+.blog-list .posts .post-tile{
+    margin: 1%;
+}
+
+h1 {
+    padding: 0 24px;
 }
 
 .post-tile {
@@ -30,3 +41,26 @@
     max-width: 100%;
 }
 
+.carousel {
+    position: relative;
+}
+
+.previous, .next {
+    position: absolute;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background-color: white;
+    padding: 2px 10px;
+}
+
+.next {
+    right: 24px;
+}
+
+.previous {
+    left: 24px;
+}

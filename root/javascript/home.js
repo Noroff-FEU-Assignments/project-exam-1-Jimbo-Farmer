@@ -1,4 +1,4 @@
-const latestPosts = document.querySelector(".latest-posts")
+const latestPosts = document.querySelector(".posts")
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 
 
@@ -19,16 +19,15 @@ if(w < 600){
     tiles = 4;
 }
 
+
 window.addEventListener('resize', function(){
-    if(w>=600){
+    if(window.innerWidth > w || window.innerWidth < w){   
         let reload = setTimeout(function(){
             window.location.reload();
         }, 1000);
         reload();
-    }
-    
+    }    
 });
-
 
 async function getPosts(){
     try { 
