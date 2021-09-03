@@ -119,6 +119,7 @@ header {
 .nav-items .search-container {
     font-size: 0;
     position: relative;
+    padding: 26px 0px 26px 20px;
 }
 
 #search-field{
@@ -144,10 +145,10 @@ header {
     background-color: white;
     right: 9%;
     font-size: 0;
-    padding: 2px 4px;
+    padding: 4px 4px;
 }
 #search-go img{
-    height: 29px;
+    height: 25px;
 }
 
 .hidden {
