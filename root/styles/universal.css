@@ -112,7 +112,8 @@ header {
 }
 
 .nav-items #search-go:hover{
-    background-color: #027CC1;
+    color: black;
+    background-color: white;
     cursor: pointer;
 }
 
@@ -131,29 +132,27 @@ header {
     display: inline;
     font-size: 1.3125rem;
     padding: 4px 2px 4px 2px;
-    border: 1px solid white;
     border-radius: 0;
+    border: unset;
     box-shadow: none;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    vertical-align: middle;
-        
+    vertical-align: middle;      
 }
 
 #search-field:focus {
     outline: unset;
-    border-bottom: 1px solid #027CC1;
 }
 
 #search-go{
     border: unset;
     display: inline;
-    background-color: white;
-    font-size: 0;
+    color: white;
+    background-color: #027CC1;
+    font-size: 1.3125rem;
     padding: 4px 4px;
     vertical-align: middle;
-    border: 1px solid white;
 }
 #search-go img{
     height: 25px;
