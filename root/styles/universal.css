@@ -119,8 +119,11 @@ header {
 
 .nav-items .search-container {
     font-size: 0;
-    position: absolute;
     padding: 26px 0px 26px 20px;
+}
+
+.inner-search-container {
+    position: relative;
 }
 
 #search-field{
@@ -129,8 +132,11 @@ header {
     font-size: 1.3125rem;
     padding: 4px 2px 4px 2px;
     border: none;
+    border-radius: 0;
+    appearance: none;
+    -moz-appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none;    
+        
 }
 
 #search-field:focus {
