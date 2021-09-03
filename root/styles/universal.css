@@ -131,7 +131,7 @@ header {
     display: inline;
     font-size: 1.3125rem;
     padding: 4px 2px 4px 2px;
-    border: none;
+    border: 1px solid white;
     border-radius: 0;
     box-shadow: none;
     appearance: none;
@@ -143,17 +143,17 @@ header {
 
 #search-field:focus {
     outline: unset;
-    border-bottom: 2px solid #FACE3C;
+    border-bottom: 1px solid #027CC1;
 }
 
 #search-go{
     border: unset;
     display: inline;
-    position: relative;
     background-color: white;
     font-size: 0;
     padding: 4px 4px;
     vertical-align: middle;
+    border: 1px solid white;
 }
 #search-go img{
     height: 25px;
