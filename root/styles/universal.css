@@ -133,6 +133,7 @@ header {
     padding: 4px 2px 4px 2px;
     border: none;
     border-radius: 0;
+    box-shadow: none;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
