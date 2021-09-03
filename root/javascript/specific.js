@@ -38,7 +38,7 @@ async function getBlogPost(){
                     modalBox.innerHTML = ``;
                 }
             }  
-            window.ontouchstart = function(event){
+            window.ontouchend = function(event){
                 if(event.target === modalBox){
                     event.target.classList.remove("open");
                     modalBox.innerHTML = ``;
