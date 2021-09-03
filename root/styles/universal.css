@@ -152,6 +152,7 @@ header {
     border: unset;
     display: inline;
     color: white;
+    border-radius: 0;
     background-color: #027CC1;
     font-size: 1.3125rem;
     padding: 4px 4px;
