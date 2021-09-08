@@ -16,6 +16,7 @@ async function getPosts(){
                 loadMore.disabled = true;
             }
             for(let i = 0; i < tileQty; i++){
+                blogList.classList.remove("loading");
                 blogList.innerHTML += `<div class=post-tile>
                 <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">

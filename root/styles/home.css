@@ -1,8 +1,13 @@
 .posts {
     display: flex;
+    flex-wrap: nowrap;
+    margin: 24px; 
+    overflow: hidden; 
+}
+
+.posts.all {
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 24px;  
 }
 
 .blog-list .posts {
@@ -17,14 +22,19 @@ h1 {
     padding: 0 24px;
 }
 
+.tile-block {
+    flex: 0 0 100%;
+    display: flex;
+    transition: all 0.7s ease-in-out;
+}
+
 .post-tile {
-    width: 80%;
     border: 2px solid white;
     padding-bottom: 12px;
-    margin-bottom: 24px;
+    margin: 24px 2%;
     color: black;
     background-color: #E6E6E6;   
-    position: relative;
+    display: inline-block;
 }
 
 .post-tile h2, .post-tile p, .post-tile a {
@@ -43,6 +53,7 @@ h1 {
 
 .carousel {
     position: relative;
+    margin-bottom: 48px;
 }
 
 .previous, .next {
@@ -54,7 +65,8 @@ h1 {
     box-shadow: none;
     border: none;
     background-color: white;
-    padding: 2px 10px;
+    padding: 12px 48px;
+    
 }
 
 .next {
@@ -63,4 +75,11 @@ h1 {
 
 .previous {
     left: 24px;
+}
+
+.see-more {
+    margin: 24px auto;
+    display: block;
+    padding: 12px 48px;
+    font-size: 1.3125rem;
 }

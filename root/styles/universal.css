@@ -193,3 +193,19 @@ h2 {
     width: 100%;
     
 }
+
+
+
+.loading {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    border-radius: 50%;
+    border: 20px solid #FACE3C;
+    border-left: 20px solid #7e671e;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
