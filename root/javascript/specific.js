@@ -9,19 +9,18 @@ const blogContainer = document.querySelector(".full-blog");
 
 async function getBlogPost(){
     try { 
-        const response = await fetch(url+urlExt);
-        const output = await response.json();       
-        
+        const response = await fetch(url+urlExt+"?_embed");
+        const output = await response.json(); 
+               
         function generateHtml(){
             blogContainer.classList.remove("loading");
             document.title = `Transform Tomorrow | ${output.title.rendered}`;
             blogContainer.innerHTML = `<div class="blog-post">
             <h1>${output.title.rendered}</h1>
+            <img class="featured" src="${output._embedded['wp:featuredmedia']['0'].source_url}">
             ${output.content.rendered}
             <div class="modal-box"></div>
-            </div>`;
-
-            
+            </div>`;            
         }
         generateHtml();  
         
@@ -51,7 +50,9 @@ async function getBlogPost(){
                 
         
     } catch (error) {
-        
+        console.log(error)
+        blogContainer.classList.remove("loading");
+        blogContainer.innerHTML =`<p>Apologies, an error has occurred</p>`;
     }
 }
 getBlogPost();

@@ -5,9 +5,16 @@
     padding: 12px;
 }
 
-.wp-block-image {
+.blog-post {
+    text-align: center;
+}
+
+.featured {
+    display: inline-block;
+}
+
+.wp-block-image, .featured {
     max-width: 50%;
-    
     margin: 16px auto;
 }
 

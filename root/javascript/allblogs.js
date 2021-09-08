@@ -40,7 +40,9 @@ async function getPosts(){
         
         
     } catch (error) {
-        
+        console.log(error)
+        blogList.classList.remove("loading");
+        blogList.innerHTML =`<p>Apologies, an error has occurred</p>`;
     }
 }
 getPosts();

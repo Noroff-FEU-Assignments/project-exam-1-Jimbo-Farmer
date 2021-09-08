@@ -84,7 +84,7 @@ header {
 
 .nav-items {
     position: absolute;
-    height: 100vh;
+    height: 100%;
     background-color: #303030;
     top: 0;
     left: 0;
@@ -128,7 +128,7 @@ header {
 }
 
 #search-field{
-    width: 80%;
+    width: 70%;
     display: inline;
     font-size: 1.3125rem;
     padding: 4px 2px 4px 2px;
