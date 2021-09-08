@@ -1,7 +1,6 @@
 .posts {
     display: flex;
     flex-wrap: nowrap;
-    margin: 24px; 
     overflow: hidden; 
 }
 
@@ -31,10 +30,13 @@ h1 {
 .post-tile {
     border: 2px solid white;
     padding-bottom: 12px;
-    margin: 24px 2%;
+    margin: 0 auto;
     color: black;
     background-color: #E6E6E6;   
     display: inline-block;
+    width: 90%;
+    max-width: 300px;
+    
 }
 
 .post-tile h2, .post-tile p, .post-tile a {
@@ -49,11 +51,12 @@ h1 {
 .post-tile img {
     max-height: 300px;
     max-width: 100%;
+    margin: 0 auto;
 }
 
 .carousel {
     position: relative;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
 
 .previous, .next {
@@ -61,21 +64,46 @@ h1 {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    border-radius: 0;
+    border-radius: 50%;
     box-shadow: none;
-    border: none;
-    background-color: white;
-    padding: 12px 48px;
-    
+    border: 1px solid black;
+    background-color: #FACE3C;
+    width: 48px;
+    height: 48px;
+    top: 196px;
+}
+.previous:disabled, .next:disabled {
+    background-color: lightgray;
+    opacity: 0.3;
+}
+
+.arrow-top, .arrow-bottom{
+    width: 20px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    left: 33%;
+    border-radius: 2px;
 }
 
 .next {
-    right: 24px;
+    right: 12px;
+}
+.previous {
+    left: 12px;
+    rotate: 180deg;
+}
+.arrow-top {
+    rotate: 40deg;
+    top: 16px;
+    
+}
+.arrow-bottom {
+    rotate: -40deg;
+    top: 26px;
 }
 
-.previous {
-    left: 24px;
-}
+
 
 .see-more {
     margin: 24px auto;
