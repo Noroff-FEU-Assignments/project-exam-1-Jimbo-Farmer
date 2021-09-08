@@ -52,7 +52,7 @@ async function getBlogPost(){
     } catch (error) {
         console.log(error)
         blogContainer.classList.remove("loading");
-        blogContainer.innerHTML =`<p>Apologies, an error has occurred</p>`;
+        blogContainer.innerHTML =`<p>Apologies, an error has occurred</p>`;  
     }
 }
 getBlogPost();

@@ -7,11 +7,10 @@ async function getPosts(){
     try { 
         const response = await fetch(url);
         const output = await response.json();
-        console.log(output);
         
         function generateHtml(){
             blogList.innerHTML = ``;
-            if(tileQty > output.length){
+            if(tileQty >= output.length){
                 tileQty = output.length;
                 loadMore.disabled = true;
             }
@@ -31,13 +30,7 @@ async function getPosts(){
         loadMore.onclick = function(){
             tileQty += 4;
             generateHtml();
-        }
-
-
-        
-
-
-        
+        }   
         
     } catch (error) {
         console.log(error)

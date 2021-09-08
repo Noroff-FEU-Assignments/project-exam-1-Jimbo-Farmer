@@ -14,7 +14,7 @@
 }
 
 .blog-list .posts .post-tile{
-    margin: 1%;
+    margin: 18px auto;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h1 {
     padding-bottom: 12px;
     margin: 0 auto;
     color: black;
-    background-color: #E6E6E6;   
+    background-color: #FFF3F3;   
     display: inline-block;
     width: 90%;
     max-width: 300px;
@@ -45,13 +45,18 @@ h1 {
 
 .post-tile h2 {
     min-height: 56px;
-    margin-bottom: 12px;
+    margin: 0;
+    padding: 18px 12px;
+    border-bottom: 2px solid #303030;
+    text-align: center;
+    
 }
 
 .post-tile img {
     max-height: 300px;
     max-width: 100%;
     margin: 0 auto;
+    border-bottom: 2px solid #303030;
 }
 
 .carousel {

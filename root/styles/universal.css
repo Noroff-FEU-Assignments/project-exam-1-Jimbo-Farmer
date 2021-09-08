@@ -117,7 +117,6 @@ header {
     cursor: pointer;
 }
 
-
 .nav-items .search-container {
     font-size: 0;
     padding: 26px 0px 26px 20px;
@@ -172,7 +171,6 @@ header {
 
 /* ----------------------------main styles---------------------------------------- */
 
-
 .banner-image img{
     margin-top: -24px;
     height: 200px;
@@ -190,16 +188,13 @@ h2 {
 }
 
 .bottom-banner-image img {
-    width: 100%;
-    
+    width: 100%; 
 }
-
-
 
 .loading {
     width: 60px;
     height: 60px;
-    align-self: center;
+    margin: 0 auto;
     border-radius: 50%;
     border: 20px solid #FACE3C;
     border-left: 20px solid #7e671e;
