@@ -63,7 +63,7 @@ async function getPosts(){
                     tileBlocks[i].innerHTML += `<div class=post-tile block_${i}>
                     <h2>${output[j].title.rendered}</h2>
                     <img src="${output[j]._embedded['wp:featuredmedia']['0'].source_url}">
-                    <p>${output[j].excerpt.rendered}</p>
+                    ${output[j].excerpt.rendered}
                     <a href="specificblog.html?id=${output[j].id}">Read More</a>
                     </div>` 
                 }
