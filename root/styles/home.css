@@ -36,7 +36,7 @@ h1 {
     /* display: flex;
     flex-direction: column; */
     display: grid;
-    grid-template-rows: [title-start] 20% [title-end] 37% [image-end] 40% [excerpt-end] 3% [link];
+    grid-template-rows: [title-start] 17% [title-end] 45% [image-end] 35% [excerpt-end] 3% [link];
     width: 90%;
     max-width: 300px;  
 }
@@ -63,6 +63,7 @@ h1 {
 
 .post-tile a {
     text-align: right;
+    color: #027CC1;
 }
 
 .carousel {
