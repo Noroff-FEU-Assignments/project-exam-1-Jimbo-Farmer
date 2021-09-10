@@ -20,19 +20,22 @@ input, textarea{
     min-width: unset;
 }
 
+.button-container {
+    text-align: center;
+}
+
 button {
     padding: 12px 48px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0 auto;
-    background-color: rgb(252, 192, 63);
+    background-color: #FACE3C;
     border: none;
-    border-radius: 10px;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    -webkit-appearance: none;
 }
 
 button:hover{
     cursor: pointer;
+    background-color: white;
 }
 
 .form-error {
@@ -62,12 +65,14 @@ button:hover{
     margin: 50px auto;
     background-color: black;
     padding: 30px;
+    
 }
 
 #success a {
     display: block;
     padding: 6px 12px;
-    margin: 20px 5%;
+    margin: 20px auto;
+    max-width: 300px;
     background-color: #FACE3C;
     border: none;
     color: black;

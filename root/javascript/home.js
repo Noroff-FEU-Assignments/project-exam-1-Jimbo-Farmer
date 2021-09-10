@@ -14,7 +14,7 @@ if(w < 600){
     tiles = 1;
 } else if(w >= 600 && w < 1000){
     tiles = 2;
-} else if(w >= 1000 && w < 1400){
+} else if(w >= 1000 && w < 1450){
     tiles = 3;
 } else {
     tiles = 4;

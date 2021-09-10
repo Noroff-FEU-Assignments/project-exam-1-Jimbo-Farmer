@@ -1,0 +1,17 @@
+.about {
+    width: 90%;
+    color: black;
+    background-color: white;
+    padding: 24px;
+}
+
+p {
+     display: inline-block;
+ }
+
+a {
+    color: #027CC1;
+    display: inline;
+    font-size: 1rem;
+}
+

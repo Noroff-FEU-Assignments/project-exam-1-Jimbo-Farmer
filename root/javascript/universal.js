@@ -1,3 +1,4 @@
+// Hamburger menu functionality
 const hamburgerMenu = document.querySelector("#hamburger");
 const navItems = document.querySelector(".nav-items");
 const header = document.querySelector("header");
@@ -17,3 +18,18 @@ hamburgerMenu.addEventListener("click",function(){
         menuClosed = true;
     } 
 })
+
+
+
+// Search Functionality
+const searchField = document.querySelector("#search-field");
+const searchGo = document.querySelector("#search-go");
+function runSearch(){
+  location.href = 'search.html?search='+searchField.value;
+} 
+searchGo.onclick = runSearch;
+searchField.onkeydown = function(){
+  if(event.key === "Enter"){
+    runSearch();
+  }
+}

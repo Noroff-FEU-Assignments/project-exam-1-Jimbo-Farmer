@@ -49,20 +49,26 @@
     .post-tile{
         width: 30%;
     }
+    form, input, textarea, .see-more {
+        font-size: 1.325rem;
+    }
+    .about a {
+        font-size: 1rem;
+    }
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1450px){
     main {
         flex: 5;
     }
     .post-tile{
-        width: 22%;
+        width: 23%;
     }
     h1, .main-title {
         font-size: 2.1875rem;
     }
-    h2 {
-        font-size: 1.75rem;
+    .post-tile p {
+        min-height: 170px;
     }
     p {
         font-size: 1.3125rem;

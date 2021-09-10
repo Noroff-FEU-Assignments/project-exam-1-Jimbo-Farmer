@@ -19,7 +19,7 @@ async function getPosts(){
                 blogList.innerHTML += `<div class=post-tile>
                 <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">
-                <p>${output[i].excerpt.rendered}</p>
+                ${output[i].excerpt.rendered}
                 <a href="specificblog.html?id=${output[i].id}">Read More</a>
                 </div>`
             }

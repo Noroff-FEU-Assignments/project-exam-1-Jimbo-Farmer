@@ -6,6 +6,8 @@ const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts/";
 const urlExt = id;
 
 const blogContainer = document.querySelector(".full-blog");
+const meta = document.querySelector("#meta-description");
+
 
 async function getBlogPost(){
     try { 
@@ -20,7 +22,8 @@ async function getBlogPost(){
             <img class="featured" src="${output._embedded['wp:featuredmedia']['0'].source_url}">
             ${output.content.rendered}
             <div class="modal-box"></div>
-            </div>`;            
+            </div>`;
+            meta.content = output.excerpt.rendered.replace(/(<([^>]+)>)/gi, "");  //Thanks https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/      
         }
         generateHtml();  
         
@@ -29,8 +32,7 @@ async function getBlogPost(){
         for(let i = 0; i < images.length; i++){
         images[i].onclick = function(){
             modalBox.innerHTML += this.innerHTML;
-            modalBox.classList.add("open");
-             
+            modalBox.classList.add("open"); 
             } 
             window.onclick = function(event){
                 if(event.target === modalBox){
