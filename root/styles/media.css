@@ -52,6 +52,12 @@
     form, input, textarea, .see-more {
         font-size: 1.325rem;
     }
+    .about {
+        width: 90%;
+    }
+    .about p, .about h2 {
+        padding: 0 48px;
+    }
     .about a {
         font-size: 1rem;
     }
