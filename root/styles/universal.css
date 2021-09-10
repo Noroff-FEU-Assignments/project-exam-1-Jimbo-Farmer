@@ -7,6 +7,7 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    max-width: 2000px;
 }
 
 header {
