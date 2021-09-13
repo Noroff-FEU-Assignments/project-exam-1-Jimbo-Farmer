@@ -106,6 +106,11 @@ header {
     border: 1px solid #B7B7B7;
 }
 
+.nav-items a:focus, #search-field:focus, #search-go:focus {
+    background-color: #FACE3C;
+    color: black;
+}
+
 .nav-items a:hover {
     color: black;
     background-color: #E6E6E6;
@@ -204,4 +209,8 @@ h2 {
 @keyframes spin {
     0% {rotate: 0deg;}
     100% {rotate: 360deg;}
+}
+
+h2:focus {
+    text-decoration: underline;
 }

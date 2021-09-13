@@ -17,8 +17,8 @@ async function getPosts(){
             for(let i = 0; i < tileQty; i++){
                 blogList.classList.remove("loading");
                 blogList.innerHTML += `<div class=post-tile>
-                <h2>${output[i].title.rendered}</h2>
-                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">
+                <h2 tabindex="0">${output[i].title.rendered}</h2>
+                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                 ${output[i].excerpt.rendered}
                 <a href="specificblog.html?id=${output[i].id}">Read More</a>
                 </div>`

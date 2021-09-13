@@ -33,10 +33,11 @@ button {
     -webkit-appearance: none;
 }
 
-button:hover{
+button:hover, button:focus{
     cursor: pointer;
     background-color: white;
 }
+
 
 .form-error {
     margin-bottom: 10px;

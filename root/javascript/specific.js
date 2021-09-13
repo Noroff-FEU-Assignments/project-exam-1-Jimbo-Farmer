@@ -19,19 +19,22 @@ async function getBlogPost(){
             document.title = `Transform Tomorrow | ${output.title.rendered}`;
             blogContainer.innerHTML = `<div class="blog-post">
             <h1>${output.title.rendered}</h1>
-            <img class="featured" src="${output._embedded['wp:featuredmedia']['0'].source_url}">
+            <img class="featured" src="${output._embedded['wp:featuredmedia']['0'].source_url}" alt="${output._embedded['wp:featuredmedia']['0'].alt_text}">
             ${output.content.rendered}
             <div class="modal-box"></div>
             </div>`;
             meta.content = output.excerpt.rendered.replace(/(<([^>]+)>)/gi, "");  //Thanks https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/      
+            console.log(output._embedded['wp:featuredmedia']['0'])
         }
         generateHtml();  
-        
-        const images = document.querySelectorAll(".wp-block-image");
+        let images =[];
+        images.push(document.querySelectorAll(".wp-block-image"));
+        images.push(document.querySelector(".featured")); 
+        console.log(images)
         const modalBox = document.querySelector(".modal-box");
         for(let i = 0; i < images.length; i++){
         images[i].onclick = function(){
-            modalBox.innerHTML += this.innerHTML;
+            modalBox.innerHTML += `<img src="${this.src}" alt="${this.alt}">`;
             modalBox.classList.add("open"); 
             } 
             window.onclick = function(event){

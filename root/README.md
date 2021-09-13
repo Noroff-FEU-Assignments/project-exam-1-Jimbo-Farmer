@@ -75,4 +75,6 @@ to do:
 
 - More images. 
 
-- Contact info sent to wordpress. 
+- Contact info sent to wordpress.   
+
+- headless mode redirect. 

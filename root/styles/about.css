@@ -1,25 +1,41 @@
 .about {
-    padding: 24px 0;
+    padding: 0;
     color: black;
     background-color: white;
 }
 
 h2 {
-    
-    padding: 0 24px;
+    margin: 0;
+    font-size: 1rem;
+    padding-left: 24px;
 }
+
 
 p { 
     padding: 0 24px;
     display: inline-block;
  }
 
+ .main-title, .tagline {
+    padding: 0px;
+ }
+
 a {
     color: #027CC1;
-    display: inline;
     font-size: 1rem;
 }
 
 img {
     width: 100%;
+}
+
+.fire, .better, .solutions {
+    position: relative;
+}
+
+.fire h2, .better h2, .solutions h2 {
+    position: absolute;
+    bottom: 12px;
+    left: 0px;
+    color: white;
 }

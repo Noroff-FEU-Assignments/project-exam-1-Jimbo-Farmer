@@ -2,6 +2,9 @@
     .post-tile{
         width: 45%;
     }
+    .about h2 {
+        font-size: 1.3125rem;
+    }
 }
 
 
@@ -55,7 +58,7 @@
     .about {
         width: 90%;
     }
-    .about p, .about h2 {
+    .about p, .about h2, .blog-post p {
         padding: 0 48px;
     }
     .about a {
@@ -95,5 +98,11 @@
     }
     .post-tile h2 {
         min-height: 64px;
+    }
+    .about h2 {
+        font-size: 1.75rem;
+    }
+    .about p, .about h2, .blog-post p {
+        padding: 0 72px;
     }
 }
