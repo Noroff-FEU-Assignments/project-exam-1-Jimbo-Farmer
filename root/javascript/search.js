@@ -16,21 +16,16 @@ async function getPosts(){
         
         function generateHtml(){
             results.innerHTML = ``;
-            
             for(let i = 0; i < output.length; i++){
                 results.classList.remove("loading");
-                results.innerHTML += `<div class=post-tile>
+                results.innerHTML += `<a href="specificblog.html?id=${output[i].id}" class=post-tile>
                 <h2>${output[i].title.rendered}</h2>
-                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}">
+                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                 ${output[i].excerpt.rendered}
-                <a href="specificblog.html?id=${output[i].id}">Read More</a>
-                </div>`
+                </a>`
             }
-
         }
-        generateHtml();  
-        
-          
+        generateHtml();          
         
     } catch (error) {
         console.log(error)

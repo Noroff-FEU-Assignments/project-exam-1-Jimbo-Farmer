@@ -2,6 +2,7 @@ const blogList = document.querySelector(".posts");
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 const loadMore = document.querySelector(".see-more");
 
+
 let tileQty = 8;
 async function getPosts(){
     try { 
@@ -16,22 +17,45 @@ async function getPosts(){
             }
             for(let i = 0; i < tileQty; i++){
                 blogList.classList.remove("loading");
-                blogList.innerHTML += `<div class=post-tile>
-                <h2 tabindex="0">${output[i].title.rendered}</h2>
+                blogList.innerHTML += `<a class="post-tile" href="specificblog.html?id=${output[i].id}">
+                <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                 ${output[i].excerpt.rendered}
-                <a href="specificblog.html?id=${output[i].id}">Read More</a>
-                </div>`
+                
+                </a>`
             }
 
         }
         generateHtml();  
+
+
+
+        function generateExtraHtml(){
+            let postsDone = document.querySelectorAll(".post-tile").length;
+            if(postsDone + extraTileQty >= output.length){
+                extraTileQty = output.length - postsDone;
+                loadMore.disabled = true;
+            }
+            for(let i = postsDone; i < extraTileQty + postsDone; i++){
+                blogList.classList.remove("loading");
+                blogList.innerHTML += `<a class="post-tile" href="specificblog.html?id=${output[i].id}">
+                <h2>${output[i].title.rendered}</h2>
+                <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
+                ${output[i].excerpt.rendered}
+                </a>`
+            }
+            document.querySelectorAll(".post-tile")[postsDone].focus();  //set focus to the newly displayed posts so that keyboard users don't have to tab baack through all posts. 
+
+        }
         
         loadMore.onclick = function(){
-            tileQty += 4;
-            generateHtml();
+            extraTileQty = 4;
+            generateExtraHtml();
+            
+
         }   
-        
+        postTiles = document.querySelectorAll(".post-tile");
+        console.log(postTiles);
     } catch (error) {
         console.log(error)
         blogList.classList.remove("loading");

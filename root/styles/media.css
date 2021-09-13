@@ -76,9 +76,9 @@
     h1, .main-title {
         font-size: 2.1875rem;
     }
-    .post-tile p {
+    /* .post-tile p {
         min-height: 170px;
-    }
+    } */
     p {
         font-size: 1.3125rem;
     }

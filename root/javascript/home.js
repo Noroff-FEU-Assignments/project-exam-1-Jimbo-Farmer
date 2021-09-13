@@ -60,12 +60,11 @@ async function getPosts(){
                     if(j >= output.length){
                         break;
                     }
-                    tileBlocks[i].innerHTML += `<div class=post-tile block_${i}>
-                    <h2 tabindex="0">${output[j].title.rendered}</h2>
+                    tileBlocks[i].innerHTML += `<a href="specificblog.html?id=${output[j].id}" class="post-tile block_${i}">
+                    <h2>${output[j].title.rendered}</h2>
                     <img src="${output[j]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[j]._embedded['wp:featuredmedia']['0'].alt_text}">
                     ${output[j].excerpt.rendered}
-                    <a href="specificblog.html?id=${output[j].id}">Read More</a>
-                    </div>` 
+                    </a>` 
                 }
                 indexStart += tiles;
                 indexStop += tiles;
@@ -74,8 +73,24 @@ async function getPosts(){
         generateTiles();
 
         let position = 0;
+        let positionIndex = 0;
+
+        const postTiles = document.querySelectorAll(".post-tile");
+        function updateTabIndex(){                                        //Makes hidden content 'untabbable' so keyboard users don't get lost. 
+            for(let i = 0; i < postTiles.length; i++){
+                if(postTiles[i].classList[1] ===`block_${positionIndex}`){
+                    postTiles[i].tabIndex = 0;
+                } else {
+                    postTiles[i].tabIndex = -1;
+                }
+            }
+        }
+        updateTabIndex();
+
         nextButton.addEventListener("click", function(){
             position += windowWidth;
+            positionIndex += 1;
+            updateTabIndex();
             previousButton.disabled = false;
             for(let i= 0; i < tileBlocks.length; i++){
                 tileBlocks[i].style.transform = "translateX(-"+position+"px)"
@@ -88,6 +103,8 @@ async function getPosts(){
         
         previousButton.addEventListener("click", function(){
             position -= windowWidth;
+            positionIndex -= 1;
+            updateTabIndex();
             nextButton.disabled = false;
             for(let i= 0; i < tileBlocks.length; i++){
                 tileBlocks[i].style.transform = "translateX(-"+position+"px)"
@@ -97,9 +114,7 @@ async function getPosts(){
             } 
         }) 
         
-        
-
-        
+      
 
     } catch(error) {
         latestPosts.classList.remove("loading");
