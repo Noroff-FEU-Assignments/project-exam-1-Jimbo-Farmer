@@ -53,7 +53,7 @@
     }
     .page-headline img {
         visibility: visible;
-        max-height: 300px;
+        max-height: 200px;
     }
     .page-headline h1 {
         color: white;
@@ -121,5 +121,8 @@
     }
     .full-blog img {
         max-width: 50%;
+    }
+    .page-headline img {
+        max-height: 250px;
     }
 }

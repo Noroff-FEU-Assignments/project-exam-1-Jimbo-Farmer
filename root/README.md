@@ -75,7 +75,7 @@ to do:
 
 - More images. 
 
-- 
+- Touch capability for carousel.
 
 - Contact info sent to wordpress.   
 
