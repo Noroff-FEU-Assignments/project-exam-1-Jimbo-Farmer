@@ -58,6 +58,9 @@
     .page-headline h1 {
         color: white;
     }
+    .contact-main {
+        border-left: 2px solid white;
+    }
     
 }
 
@@ -71,9 +74,9 @@
     form, input, textarea, .see-more, .button-container button {
         font-size: 1.325rem;
     }
-    .about h1 {
+    /* .about h1 {
         padding: 72px;
-    }
+    } */
     .about p, .about h2, .blog-post p {
         padding: 0 72px;
     }
