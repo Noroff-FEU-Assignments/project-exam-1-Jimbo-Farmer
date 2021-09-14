@@ -6,6 +6,8 @@ const previousButton = document.querySelector(".previous");
 const nextButton = document.querySelector(".next");
 previousButton.disabled = true;
 
+const indexDisplay = document.querySelector(".index-display")
+
 let w = window.innerWidth;
 let tiles;
 let firstTile;
@@ -20,7 +22,7 @@ if(w < 600){
     tiles = 4;
 }
 
-// Function to reload page if page width changes
+// Function to reload page if page width changes, timeout prevents flurry of reload attempts. 
 window.addEventListener('resize', function(){
     if(window.innerWidth > w || window.innerWidth < w){   
         let reload = setTimeout(function(){
@@ -45,6 +47,8 @@ async function getPosts(){
             blocks = Math.ceil(output.length / tiles); //Number of carousel blocks is total blogs divided by number of tiles on a page. 
             for(let i = 0; i < blocks; i ++){
                 latestPosts.innerHTML += `<div class="tile-block">
+                </div>`
+                indexDisplay.innerHTML += `<div class="index-dot">
                 </div>`
             }
         }
@@ -87,13 +91,19 @@ async function getPosts(){
         }
         updateTabIndex();
 
+
+        const indexDots = document.querySelectorAll(".index-dot");
+        indexDots[0].classList.add("filled-in");
         nextButton.addEventListener("click", function(){
             position += windowWidth;
             positionIndex += 1;
+            indexDots[positionIndex].classList.add("filled-in");            
+            indexDots[positionIndex-1].classList.remove("filled-in");
             updateTabIndex();
             previousButton.disabled = false;
             for(let i= 0; i < tileBlocks.length; i++){
-                tileBlocks[i].style.transform = "translateX(-"+position+"px)"
+                tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
+                       
             }
             console.log(position)
             if(position === (blocks -1) * windowWidth){
@@ -104,10 +114,13 @@ async function getPosts(){
         previousButton.addEventListener("click", function(){
             position -= windowWidth;
             positionIndex -= 1;
+            indexDots[positionIndex].classList.add("filled-in");
+            indexDots[positionIndex+1].classList.remove("filled-in");
             updateTabIndex();
             nextButton.disabled = false;
             for(let i= 0; i < tileBlocks.length; i++){
-                tileBlocks[i].style.transform = "translateX(-"+position+"px)"
+                tileBlocks[i].style.transform = "translateX(-"+position+"px)";
+                
             }
             if(position === 0){
                 previousButton.disabled = true;

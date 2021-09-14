@@ -76,7 +76,7 @@ a {
 
 .carousel {
     position: relative;
-    margin: 72px 0;
+    margin: 24px 0;
 }
 
 .previous, .next {
@@ -165,3 +165,20 @@ a {
     cursor: auto;
 }
 
+.index-display {
+    text-align: center;
+    margin: 12px auto;
+}
+
+.index-dot {
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    margin: auto 6px;
+}
+
+.filled-in {
+    background-color: black;
+}
