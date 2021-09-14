@@ -91,7 +91,7 @@ a {
     width: 48px;
     height: 48px;
     top: 196px;
-    z-index: 1000;
+    z-index: 100;
 }
 .previous:hover, .next:hover {
     cursor: pointer;
