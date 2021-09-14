@@ -86,6 +86,7 @@ header {
 .nav-items {
     position: absolute;
     height: 100vh;
+    min-height: 600px;                /*Attempt to fix navbar issue when holding mobile in landscape mode */
     background-color: #303030;
     top: 0;
     left: 0;
