@@ -51,11 +51,8 @@ async function getPosts(){
         loadMore.onclick = function(){
             extraTileQty = 4;
             generateExtraHtml();
-            
+        }     
 
-        }   
-        postTiles = document.querySelectorAll(".post-tile");
-        console.log(postTiles);
     } catch (error) {
         console.log(error)
         blogList.classList.remove("loading");

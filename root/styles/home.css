@@ -21,8 +21,19 @@
     margin: 18px 1.5%;
 }
 
+.page-headline {
+    position: relative;
+}
+
+.page-headline img {
+    width: 100%;
+    max-height: 300px;
+}
+
 h1 {
-    padding: 0 24px;
+    position: absolute;
+    left: 5%;
+    top: 25%;
 }
 
 .tile-block {
@@ -33,7 +44,7 @@ h1 {
 }
 
 .post-tile {
-    border: 2px solid white;
+    border: 2px solid black;
     padding-bottom: 12px;
     margin: 0 auto;
     color: black;
@@ -70,18 +81,6 @@ h1 {
     overflow: hidden;
 }
 
-/* .post-tile p {
-    min-height: 110px;
-} */
-
-/* .post-tile a {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    text-align: right;
-    color: #027CC1;
-} */
-
 a {
     text-decoration: none;
 }
@@ -93,7 +92,7 @@ a {
 
 .carousel {
     position: relative;
-    margin-bottom: 24px;
+    margin: 24px 0;
 }
 
 .previous, .next {
@@ -182,3 +181,4 @@ a {
     opacity: 0.3;
     cursor: auto;
 }
+

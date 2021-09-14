@@ -4,16 +4,20 @@
     background-color: white;
 }
 
-h2 {
-    margin: 0;
-    font-size: 1rem;
-    padding-left: 24px;
+h1 {
+    margin: 0 0 2px 0;
+    padding: 24px 0;
 }
 
+h2 {
+
+    margin: 0;
+    font-size: 1rem;
+    padding: 0 24px;
+}
 
 p { 
     padding: 0 24px;
-    display: inline-block;
  }
 
  .main-title, .tagline {
@@ -29,13 +33,23 @@ img {
     width: 100%;
 }
 
+.about-text {
+    margin-bottom: 72px;
+}
+
+
 .fire, .better, .solutions {
     position: relative;
 }
 
 .fire h2, .better h2, .solutions h2 {
     position: absolute;
-    bottom: 12px;
+    bottom: 21px;
     left: 0px;
     color: white;
+    z-index: 1000;
+}
+
+#last {
+    padding-bottom: 48px;
 }

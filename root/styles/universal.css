@@ -1,6 +1,6 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #027CC1;
+    background-color: white;
     color: white;
     margin: 0;
     position: relative;
@@ -177,11 +177,7 @@ header {
 
 /* ----------------------------main styles---------------------------------------- */
 
-.banner-image img{
-    margin-top: -24px;
-    height: 200px;
-    display: none;
-}
+
 
 h1 {
     text-transform: uppercase;

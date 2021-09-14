@@ -27,10 +27,15 @@ async function getBlogPost(){
             console.log(output._embedded['wp:featuredmedia']['0'])
         }
         generateHtml();  
+
         let images =[];
-        images.push(document.querySelectorAll(".wp-block-image"));
+        if(document.querySelector(".wp-block-image")){                          //Check for images in the article before attempting to add them.
+            images.push(document.querySelectorAll(".wp-block-image img")[0]);
+        }
+        
         images.push(document.querySelector(".featured")); 
         console.log(images)
+        
         const modalBox = document.querySelector(".modal-box");
         for(let i = 0; i < images.length; i++){
         images[i].onclick = function(){

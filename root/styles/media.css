@@ -42,6 +42,9 @@
         display: unset;
         
     }
+    .about {
+        border-left: 2px solid white;
+    }
     
 }
 
@@ -55,11 +58,11 @@
     form, input, textarea, .see-more {
         font-size: 1.325rem;
     }
-    .about {
-        width: 90%;
+    .about h1 {
+        padding: 72px;
     }
     .about p, .about h2, .blog-post p {
-        padding: 0 48px;
+        padding: 0 72px;
     }
     .about a {
         font-size: 1rem;
@@ -103,6 +106,6 @@
         font-size: 1.75rem;
     }
     .about p, .about h2, .blog-post p {
-        padding: 0 72px;
+        padding: 0 96px;
     }
 }
