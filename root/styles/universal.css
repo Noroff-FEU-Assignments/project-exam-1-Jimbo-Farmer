@@ -179,6 +179,26 @@ header {
 
 
 
+/* For home, results, all posts, search and contact */
+.page-headline {
+    position: relative;
+}
+
+.page-headline img {
+    width: 100%;
+    max-height: 100px;
+    visibility: hidden;
+}
+
+.page-headline h1 {
+    position: absolute;
+    color: black;
+    left: 5%;
+    top: 25%;
+}
+/* ----------- */
+
+
 h1 {
     text-transform: uppercase;
     font-size: 1.75rem;
@@ -189,8 +209,11 @@ h2 {
     font-size: 1.3125rem;
 }
 
-.bottom-banner-image img {
-    width: 100%; 
+.bottom-banner-image {
+    background-image: url(../images/Happy-Town.jpg); 
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .loading {

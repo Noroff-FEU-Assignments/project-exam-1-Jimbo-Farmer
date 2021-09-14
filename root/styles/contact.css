@@ -1,14 +1,16 @@
 body {
-    background-color: #027CC1;
+    background-color: #303030;
 }
 
+main {
+    border-left: 2px solid white;
+}
 
 .form-container {
-    margin: 24px auto;
+    margin: 48px auto;
     width: 50%;
-    min-width: 300px;
+    min-width: 300px;    
 }
-
 
 input, textarea{
     width: 100%;
@@ -40,13 +42,13 @@ button {
 
 button:hover, button:focus{
     cursor: pointer;
-    background-color: white;
+    background-color: #027CC1;
+    color: white;
 }
 
-
 .form-error {
-    margin-bottom: 10px;
-    color: rgb(255, 142, 142);
+    margin-bottom: 24px;
+    color: rgb(255, 80, 80);
     visibility: hidden;
 }
 
@@ -61,6 +63,13 @@ button:hover, button:focus{
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
     z-index: 100;
+    animation: expand 0.5s;   
+    animation-timing-function: ease-out; 
+}
+
+@keyframes expand {
+    0% {transform: scale(0);} 
+    100% {transform: scale(1);}
 }
 
 #success .message-details {

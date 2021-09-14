@@ -45,6 +45,13 @@
     .about {
         border-left: 2px solid white;
     }
+    .page-headline img {
+        visibility: visible;
+        max-height: 300px;
+    }
+    .page-headline h1 {
+        color: white;
+    }
     
 }
 
@@ -55,7 +62,7 @@
     .post-tile{
         width: 30%;
     }
-    form, input, textarea, .see-more {
+    form, input, textarea, .see-more, .button-container button {
         font-size: 1.325rem;
     }
     .about h1 {
@@ -79,13 +86,7 @@
     h1, .main-title {
         font-size: 2.1875rem;
     }
-    /* .post-tile p {
-        min-height: 170px;
-    } */
-    p {
-        font-size: 1.3125rem;
-    }
-    a {
+    p, a {
         font-size: 1.3125rem;
     }
     .full-blog {
@@ -99,9 +100,9 @@
         max-height: 90vh;
         top: 5vh;
     }
-    .post-tile h2 {
+    /* .post-tile h2 {
         min-height: 64px;
-    }
+    } */
     .about h2 {
         font-size: 1.75rem;
     }
