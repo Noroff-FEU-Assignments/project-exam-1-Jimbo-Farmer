@@ -35,7 +35,7 @@ async function getBlogPost(){
         
         images.push(document.querySelector(".featured")); 
         console.log(images)
-        
+
         const modalBox = document.querySelector(".modal-box");
         for(let i = 0; i < images.length; i++){
         images[i].onclick = function(){

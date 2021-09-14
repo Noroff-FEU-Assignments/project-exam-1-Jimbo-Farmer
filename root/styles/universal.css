@@ -211,8 +211,9 @@ h2 {
 
 .bottom-banner-image {
     background-image: url(../images/Happy-Town.jpg); 
-    min-height: 600px;
+    min-height: 200px;
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: bottom;
 }
 

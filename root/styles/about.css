@@ -10,7 +10,6 @@ h1 {
 }
 
 h2 {
-
     margin: 0;
     font-size: 1rem;
     padding: 0 24px;
@@ -46,10 +45,5 @@ img {
     position: absolute;
     bottom: 21px;
     left: 0px;
-    color: white;
-    
-}
-
-#last {
-    padding-bottom: 48px;
+    color: white;  
 }

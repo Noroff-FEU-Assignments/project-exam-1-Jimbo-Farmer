@@ -5,6 +5,12 @@
     .about h2 {
         font-size: 1.3125rem;
     }
+    .full-blog img {
+        max-width: 70%;
+    }
+    .full-blog {
+        padding: 48px;
+    }
 }
 
 
@@ -74,6 +80,17 @@
     .about a {
         font-size: 1rem;
     }
+    
+    .bottom-banner-image { 
+        min-height: 400px;
+    }
+    .full-blog img {
+        max-width: 60%;
+    }
+    .full-blog {
+        margin: 48px 48px 48px 0;
+    }
+    
 }
 
 @media (min-width: 1450px){
@@ -88,25 +105,18 @@
     }
     p, a {
         font-size: 1.3125rem;
-    }
-    .full-blog {
-        padding: 24px;
-    }
-    .full-blog .wp-block-image {
-        max-width: 40%;
-    }
-    
+    }  
     .full-blog .modal-box.open img {
         max-height: 90vh;
         top: 5vh;
     }
-    /* .post-tile h2 {
-        min-height: 64px;
-    } */
     .about h2 {
         font-size: 1.75rem;
     }
     .about p, .about h2, .blog-post p {
         padding: 0 96px;
+    }
+    .full-blog img {
+        max-width: 50%;
     }
 }
