@@ -126,6 +126,26 @@ async function getPosts(){
                 previousButton.disabled = true;
             } 
         }) 
+
+
+        for(let i = 0; i < indexDots.length; i++){
+            
+            indexDots[i].addEventListener("click", function(){
+                for(let i = 0; i < indexDots.length; i++){
+                    indexDots[i].classList.remove("filled-in");
+                }
+                position = (i*windowWidth);
+                positionIndex = i;
+                indexDots[i].classList.add("filled-in");
+                updateTabIndex()
+                for(let i= 0; i < tileBlocks.length; i++){
+                    tileBlocks[i].style.transform = "translateX(-"+position+"px)"; 
+                }
+                if(position === 0){
+                    previousButton.disabled = true;
+                } 
+            })
+        }
         
       
 

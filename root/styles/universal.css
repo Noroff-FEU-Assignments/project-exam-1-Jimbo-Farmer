@@ -11,10 +11,14 @@ body {
 }
 
 header {
-    padding: 24px 5% 0 5%;
+    padding: 0 5%;
     text-transform: uppercase;
     border-bottom: 2px solid white;
     background-color: #303030;
+}
+
+.navbar{
+    padding-top: 24px;
 }
 
 .main-title {

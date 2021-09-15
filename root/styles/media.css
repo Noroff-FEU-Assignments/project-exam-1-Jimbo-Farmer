@@ -24,8 +24,8 @@
     }
     .nav-items {
         height: unset;
-        position: relative;
         padding-top: 20px;
+        position: inherit;
     }
     .nav-items a, .nav-items .search-container{
         margin-left: 0;
@@ -38,7 +38,11 @@
         flex: 1;
         max-width: 300px;
         min-height: 100vh;
-        
+        position: relative;
+    }
+    .navbar {
+        position: sticky;
+        top: 0;
     }
     main {
         flex: 3;
