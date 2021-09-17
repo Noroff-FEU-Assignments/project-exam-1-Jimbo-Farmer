@@ -82,3 +82,4 @@ to do:
 
 - headless mode redirect. 
 
+- contact page continuous validation

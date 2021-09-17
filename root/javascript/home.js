@@ -43,8 +43,6 @@ async function getPosts(){
         function generateBlocks(){
             loadingIndicator.classList.remove("loading");
             latestPosts.innerHTML =``;
-            windowWidth = latestPosts.scrollWidth -16.8;  //Needed later for previous and next buttons to slide content left and right. 
-            console.log(windowWidth);
             blocks = Math.ceil(output.length / tiles); //Number of carousel blocks is total blogs divided by number of tiles on a page. 
             for(let i = 0; i < blocks; i ++){
                 latestPosts.innerHTML += `<div class="tile-block">
@@ -54,7 +52,7 @@ async function getPosts(){
             }
         }
         generateBlocks();  
-        console.log(windowWidth);
+    
         const tileBlocks = document.querySelectorAll(".tile-block"); 
 
         function generateTiles(){
@@ -79,7 +77,7 @@ async function getPosts(){
 
         let position = 0;
         let positionIndex = 0;
-
+                
         const postTiles = document.querySelectorAll(".post-tile");
         function updateTabIndex(){                                        //Makes hidden content 'untabbable' so keyboard users don't get lost. 
             for(let i = 0; i < postTiles.length; i++){
@@ -92,7 +90,7 @@ async function getPosts(){
         }
         updateTabIndex();
 
-
+        windowWidth = latestPosts.clientWidth;  //Needed later for previous and next buttons to slide content left and right. 
         const indexDots = document.querySelectorAll(".index-dot");
         indexDots[0].classList.add("filled-in");
         nextButton.addEventListener("click", function(){
