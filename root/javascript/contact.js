@@ -45,13 +45,46 @@ function validate(){
         messageError.style.visibility = "unset";
     }
     
-    if(i === 4){
+    if(i === 4){                            //set to number of inputs 
         form.submit();
         console.log("submitted")
     }
 }
 
+
+
+nameInput.onblur = function(){
+    if(lengthCheck(nameInput.value.trim().length, 5)){
+        nameError.style.visibility = "hidden";
+    } else {
+        nameError.style.visibility = "unset";
+    }
+}
+email.onblur = function(){
+    if(emailCheck(email.value)){
+        emailError.style.visibility = "hidden";
+    } else {
+        emailError.style.visibility = "unset";
+    }
+}
+subject.onblur = function(){
+    if(lengthCheck(subject.value.trim().length, 15)){
+        subjectError.style.visibility = "hidden";
+    } else {
+        subjectError.style.visibility = "unset";
+    }
+}
+message.onblur = function(){
+    if(lengthCheck(message.value.trim().length, 25)){
+        messageError.style.visibility = "hidden";
+    } else {
+        messageError.style.visibility = "unset";
+    }
+}
+
 button.addEventListener("click", validate);
+
+
 
 function lengthCheck(input, desiredLength){
     if(input >= desiredLength){

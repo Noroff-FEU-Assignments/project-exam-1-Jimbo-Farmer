@@ -57,7 +57,7 @@
     color: white;
     /* min-height: 56px; */
     margin: 0;
-    padding: 24px 0;
+    padding: 12px;
     text-align: center;   
 }
 
@@ -98,6 +98,8 @@ a {
 
 .previous:focus, .next:focus {
     border-width: 2px;
+}
+.next:focus {
     animation: pop 1s 1;
 }
 

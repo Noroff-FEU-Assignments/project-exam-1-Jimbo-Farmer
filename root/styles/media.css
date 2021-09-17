@@ -2,9 +2,6 @@
     .post-tile{
         width: 45%;
     }
-    .about h2 {
-        font-size: 1.3125rem;
-    }
     .full-blog img {
         max-width: 70%;
     }
@@ -19,6 +16,15 @@
     }
     .previous {
         left: -24px;
+    }
+    .blog-post p {
+        padding: 0 10%;
+    }
+    .blog-list {
+        margin: 0 5%;
+    }
+    .about-text, .about h2 {
+        padding: 0 10%;
     }
 }
 
@@ -47,7 +53,7 @@
     }
 
     .nav-items a, .nav-items .search-container{
-        padding: 10px;
+        padding: 4px 8px;
         width: unset;
         display: inline-block;
         height: 22px;
@@ -66,17 +72,11 @@
 
     #search-field, #search-go {
         padding: 2px;
-    }
-
-    
-    
+    } 
     main {
         overflow: hidden;
     }
-    .banner-image img{
-        display: unset;
-        
-    }
+    
     .about {
         border-left: 2px solid white;
     }
@@ -100,22 +100,23 @@
     form, input, textarea, .see-more, .button-container button {
         font-size: 1.325rem;
     }
-    
-    .about p, .about h2, .blog-post p {
-        padding: 0 72px;
+    body {
+        font-size: 1.325rem;
     }
-    .about a {
-        font-size: 1rem;
-    }
-    
-    .bottom-banner-image { 
+    /* .bottom-banner-image { 
         min-height: 400px;
-    }
+    } */
     .full-blog img {
         max-width: 60%;
     }
     .full-blog {
         margin: 48px 48px 48px 0;
+    }
+    .about-text, .about h2 {
+        padding: 0 15%;
+    }
+    h2 {
+        font-size: 1.75rem;
     }
     
 }
@@ -125,6 +126,7 @@
     .post-tile{
         width: 21%;
     }
+    
     h1 {
         font-size: 2.1875rem;
     }
@@ -138,9 +140,7 @@
     /* .about h2 {
         font-size: 1.75rem;
     } */
-    .about p, .about h2, .blog-post p {
-        padding: 0 96px;
-    }
+    
     .full-blog img {
         max-width: 50%;
     }
@@ -151,7 +151,13 @@
         width: 80%;
     }
     .nav-items a, .nav-items .search-container {
-        padding: 10px 36px;
+        padding: 4px 36px;
+    }
+    .blog-list {
+        margin: 0 10%;
+    }
+    .about-text, .about h2 {
+        padding: 0 20%;
     }
 }
 
@@ -165,7 +171,7 @@
     }
     .nav-items a, .nav-items .search-container {
         font-size: 1.3125rem;
-        padding: 12px 36px;
+        padding: 4px 42px;
         height: 28px;
     }
 }

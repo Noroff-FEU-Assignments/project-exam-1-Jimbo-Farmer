@@ -20,6 +20,9 @@ header {
 #title {
     max-width: 250px;
 }
+#title p {
+    line-height: 1em;
+}
 
 .navbar{
     padding-top: 6px;
@@ -44,7 +47,7 @@ header {
 #hamburger {
     position: absolute;
     right: 5%;
-    top: 24px;
+    top: 6px;
     width: 74px;
     height: 66px;
     background-color: black;
@@ -184,11 +187,6 @@ header {
 
 /* ----------------------------main styles---------------------------------------- */
 
-
-
-/* For home, results, all posts, search and contact */
-
-
 h1 {
     text-transform: uppercase;
     font-size: 1.75rem;
@@ -200,13 +198,20 @@ h2 {
     font-size: 1.3125rem;
 }
 
-.bottom-banner-image {
+main {
+    min-height: 100vh;
+    background-image: url(../images/Background-Placeholder.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* .bottom-banner-image {
     background-image: url(../images/Flowers.jpg); 
     min-height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-}
+} */
 
 .loading {
     width: 60px;

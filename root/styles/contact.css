@@ -9,7 +9,8 @@ h1 {
 .form-container {
     margin: 48px auto;
     width: 50%;
-    min-width: 300px;    
+    min-width: 300px;  
+    max-width: 600px;  
 }
 
 input, textarea{

@@ -2,21 +2,21 @@
     padding: 0;
     color: black;
     background-color: white;
+    
 }
 
-/* h1 {
-    margin: 0 0 2px 0;
-    padding: 24px 0; 
-} */
+main {
+    background-image: unset;
+}
 
 h2 {
     margin: 0;
     font-size: 1rem;
-    padding: 0 24px;
+    padding: 0 5%;
 }
 
 p { 
-    padding: 0 24px;
+    line-height: 1.5em;
  }
 
  .main-title, .tagline {
@@ -34,6 +34,8 @@ img {
 
 .about-text {
     margin-bottom: 72px;
+    padding: 0 5%;
+
 }
 
 

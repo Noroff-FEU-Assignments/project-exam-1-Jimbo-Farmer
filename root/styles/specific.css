@@ -44,11 +44,12 @@ h1 {
     z-index: 500;
     animation: expand 0.5s;   
     animation-timing-function: ease-out; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-box.open img {
-    position: relative;
-    top: 5%;
     width: auto;
     height: auto;
     max-height: 90vh;
@@ -60,7 +61,6 @@ h1 {
     line-height: 1.5em;
     text-align: left;
     margin: 12px auto;
-    text-align: justify;
 }
 
 @keyframes expand {
