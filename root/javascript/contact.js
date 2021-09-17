@@ -17,41 +17,16 @@ const message = document.querySelector("#message");
 const messageError = document.querySelector("#message-error");
 form.reset();
 
-function validate(){
-    let i = 0;
-    event.preventDefault();
-    if(lengthCheck(nameInput.value.trim().length, 5)){
-        nameError.style.visibility = "hidden";
-        i += 1;
+button.disabled = true;
+
+function checkFormComplete(){
+    if((lengthCheck(nameInput.value.trim().length, 5)) && (emailCheck(email.value))&&(lengthCheck(subject.value.trim().length, 15))&&(lengthCheck(message.value.trim().length, 25))){
+        button.disabled = false;
     } else {
-        nameError.style.visibility = "unset";
+        button.disabled = true;
     }
-    if(lengthCheck(subject.value.trim().length, 15)){
-        subjectError.style.visibility = "hidden";
-        i += 1;
-    } else {
-        subjectError.style.visibility = "unset";
-    }
-    if(emailCheck(email.value)){
-        emailError.style.visibility = "hidden";
-        i += 1;
-    } else {
-        emailError.style.visibility = "unset";
-    }
-    if(lengthCheck(message.value.trim().length, 25)){
-        messageError.style.visibility = "hidden";
-        i += 1;
-    } else {
-        messageError.style.visibility = "unset";
-    }
-    
-    if(i === 4){                            //set to number of inputs 
-        form.submit();
-        console.log("submitted")
-    }
+    console.log("checked")
 }
-
-
 
 nameInput.onblur = function(){
     if(lengthCheck(nameInput.value.trim().length, 5)){
@@ -59,6 +34,7 @@ nameInput.onblur = function(){
     } else {
         nameError.style.visibility = "unset";
     }
+    checkFormComplete();
 }
 email.onblur = function(){
     if(emailCheck(email.value)){
@@ -66,6 +42,7 @@ email.onblur = function(){
     } else {
         emailError.style.visibility = "unset";
     }
+    checkFormComplete();
 }
 subject.onblur = function(){
     if(lengthCheck(subject.value.trim().length, 15)){
@@ -73,6 +50,7 @@ subject.onblur = function(){
     } else {
         subjectError.style.visibility = "unset";
     }
+    checkFormComplete();
 }
 message.onblur = function(){
     if(lengthCheck(message.value.trim().length, 25)){
@@ -80,11 +58,10 @@ message.onblur = function(){
     } else {
         messageError.style.visibility = "unset";
     }
+    checkFormComplete();
 }
 
-button.addEventListener("click", validate);
-
-
+button.addEventListener("click", form.submit);
 
 function lengthCheck(input, desiredLength){
     if(input >= desiredLength){

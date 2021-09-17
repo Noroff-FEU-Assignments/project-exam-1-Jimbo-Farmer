@@ -47,6 +47,15 @@ button:hover, button:focus{
     color: white;
 }
 
+button:disabled {
+    opacity: 0.4;
+    cursor: unset;
+}
+button:disabled:hover{
+    background-color: #FACE3C;
+    color: #303030;
+}
+
 .form-error {
     margin-bottom: 24px;
     color: rgb(255, 80, 80);
