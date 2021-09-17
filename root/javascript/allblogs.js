@@ -1,7 +1,7 @@
 const blogList = document.querySelector(".posts");
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 const loadMore = document.querySelector(".see-more");
-
+const loadingIndicator = document.querySelector(".loading");
 
 let tileQty = 8;
 async function getPosts(){
@@ -15,8 +15,8 @@ async function getPosts(){
                 tileQty = output.length;
                 loadMore.disabled = true;
             }
+            loadingIndicator.classList.remove("loading");
             for(let i = 0; i < tileQty; i++){
-                blogList.classList.remove("loading");
                 blogList.innerHTML += `<a class="post-tile" href="specificblog.html?id=${output[i].id}">
                 <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">

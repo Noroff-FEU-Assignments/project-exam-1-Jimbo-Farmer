@@ -5,6 +5,7 @@ let urlExt = "&search="+searchText;
 
 const results = document.querySelector(".posts");
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
+const loadingIndicator = document.querySelector(".loading");
 
 const searchTerm = document.querySelector("#search-term");
 searchTerm.innerHTML = `"${searchText}"`;
@@ -15,9 +16,9 @@ async function getPosts(){
         const output = await response.json();
         
         function generateHtml(){
+            loadingIndicator.classList.remove("loading");
             results.innerHTML = ``;
             for(let i = 0; i < output.length; i++){
-                results.classList.remove("loading");
                 results.innerHTML += `<a href="specificblog.html?id=${output[i].id}" class=post-tile>
                 <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
@@ -29,7 +30,7 @@ async function getPosts(){
         
     } catch (error) {
         console.log(error)
-        results.classList.remove("loading");
+        loadingIndicator.classList.remove("loading");
         results.innerHTML =`<p>Apologies, an error has occurred</p>`;
     }
 }

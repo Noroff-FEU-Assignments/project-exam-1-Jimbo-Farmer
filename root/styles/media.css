@@ -11,6 +11,15 @@
     .full-blog {
         padding: 48px;
     }
+    .carousel {
+        margin: 12px 48px;
+    }
+    .next {
+        right: -24px;
+    }
+    .previous {
+        left: -24px;
+    }
 }
 
 
@@ -20,32 +29,48 @@
         display: none;
     }
     .hidden {
-        left: 0;
-    }
-    .nav-items {
-        height: unset;
-        padding-top: 20px;
-        position: inherit;
-    }
-    .nav-items a, .nav-items .search-container{
-        margin-left: 0;
-        width: unset;
-    }
-    body {
-        display: flex;
-    }
-    header {
-        flex: 1;
-        max-width: 300px;
-        min-height: 100vh;
-        position: relative;
+        left: unset;
     }
     .navbar {
+        position: relative;
+    }
+
+    .nav-items {
+        width: unset;
+        height: unset;
+        min-height: unset;
+        position: absolute;
+        right: 0;
+        top: unset;
+        bottom: 0;
+        padding: 0;
+    }
+
+    .nav-items a, .nav-items .search-container{
+        padding: 10px;
+        width: unset;
+        display: inline-block;
+        height: 22px;
+        margin: 0;
+    }
+
+    header {
         position: sticky;
         top: 0;
+        z-index: 300;
     }
+
+    .nav-items .search-container {
+        max-width: 150px;         
+    }
+
+    #search-field, #search-go {
+        padding: 2px;
+    }
+
+    
+    
     main {
-        flex: 3;
         overflow: hidden;
     }
     .banner-image img{
@@ -69,18 +94,13 @@
 }
 
 @media (min-width: 1000px){
-    main {
-        flex: 4;
-    }
     .post-tile{
-        width: 30%;
+        width: 29%;
     }
     form, input, textarea, .see-more, .button-container button {
         font-size: 1.325rem;
     }
-    /* .about h1 {
-        padding: 72px;
-    } */
+    
     .about p, .about h2, .blog-post p {
         padding: 0 72px;
     }
@@ -101,13 +121,11 @@
 }
 
 @media (min-width: 1450px){
-    main {
-        flex: 5;
-    }
+    
     .post-tile{
-        width: 23%;
+        width: 21%;
     }
-    h1, .main-title {
+    h1 {
         font-size: 2.1875rem;
     }
     p, a {
@@ -117,16 +135,37 @@
         max-height: 90vh;
         top: 5vh;
     }
-    .about h2 {
+    /* .about h2 {
         font-size: 1.75rem;
-    }
+    } */
     .about p, .about h2, .blog-post p {
         padding: 0 96px;
     }
     .full-blog img {
         max-width: 50%;
     }
-    .page-headline img {
-        max-height: 250px;
+    .nav-items .search-container {
+        max-width: 200px;         
+    }
+    #search-field {
+        width: 80%;
+    }
+    .nav-items a, .nav-items .search-container {
+        padding: 10px 36px;
+    }
+}
+
+
+@media (min-width: 1800px){
+    .main-title {
+        font-size: 2.1875rem;
+    }
+    #search-field, #search-go {
+        font-size: 1.3125rem;
+    }
+    .nav-items a, .nav-items .search-container {
+        font-size: 1.3125rem;
+        padding: 12px 36px;
+        height: 28px;
     }
 }

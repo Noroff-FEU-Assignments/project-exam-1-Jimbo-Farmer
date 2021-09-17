@@ -1,6 +1,6 @@
 const latestPosts = document.querySelector(".posts")
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
-
+const loadingIndicator = document.querySelector(".loading");
 
 const previousButton = document.querySelector(".previous");
 const nextButton = document.querySelector(".next");
@@ -41,19 +41,20 @@ async function getPosts(){
         const output = await response.json();
         
         function generateBlocks(){
-            latestPosts.classList.remove("loading");
+            loadingIndicator.classList.remove("loading");
             latestPosts.innerHTML =``;
-            windowWidth = latestPosts.scrollWidth;  //Needed later for previous and next buttons to slide content left and right. 
+            windowWidth = latestPosts.scrollWidth -16.8;  //Needed later for previous and next buttons to slide content left and right. 
+            console.log(windowWidth);
             blocks = Math.ceil(output.length / tiles); //Number of carousel blocks is total blogs divided by number of tiles on a page. 
             for(let i = 0; i < blocks; i ++){
                 latestPosts.innerHTML += `<div class="tile-block">
                 </div>`
-                indexDisplay.innerHTML += `<div class="index-dot">
+                indexDisplay.innerHTML += `<div tabindex="0" class="index-dot">
                 </div>`
             }
         }
         generateBlocks();  
-        
+        console.log(windowWidth);
         const tileBlocks = document.querySelectorAll(".tile-block"); 
 
         function generateTiles(){
@@ -127,12 +128,24 @@ async function getPosts(){
             } 
         }) 
 
+        function checkButtonDisable(){
+            if(position === 0){
+                previousButton.disabled = true;
+                nextButton.disabled = false;
+            } else if(position === ((indexDots.length -1) * windowWidth)){
+                nextButton.disabled = true;
+                previousButton.disabled = false;
+            } else {
+                previousButton.disabled = false;
+                nextButton.disabled = false;
+            }
+        }
+
 
         for(let i = 0; i < indexDots.length; i++){
-            
             indexDots[i].addEventListener("click", function(){
-                for(let i = 0; i < indexDots.length; i++){
-                    indexDots[i].classList.remove("filled-in");
+                for(let j = 0; j < indexDots.length; j++){
+                    indexDots[j].classList.remove("filled-in");
                 }
                 position = (i*windowWidth);
                 positionIndex = i;
@@ -141,16 +154,31 @@ async function getPosts(){
                 for(let i= 0; i < tileBlocks.length; i++){
                     tileBlocks[i].style.transform = "translateX(-"+position+"px)"; 
                 }
-                if(position === 0){
-                    previousButton.disabled = true;
-                } 
+                checkButtonDisable();
             })
+        }
+        for(let i = 0; i < indexDots.length; i++){
+            indexDots[i].onkeydown = function(){
+                if(event.key === "Enter"){
+                    for(let j = 0; j < indexDots.length; j++){
+                        indexDots[j].classList.remove("filled-in");
+                    }
+                    position = (i*windowWidth);
+                    positionIndex = i;
+                    indexDots[i].classList.add("filled-in");
+                    updateTabIndex()
+                    for(let i= 0; i < tileBlocks.length; i++){
+                        tileBlocks[i].style.transform = "translateX(-"+position+"px)"; 
+                    }
+                    checkButtonDisable();
+                }
+              }
         }
         
       
 
     } catch(error) {
-        latestPosts.classList.remove("loading");
+        loadingIndicator.classList.remove("loading");
         latestPosts.innerHTML =`<p>Apologies, an error has occurred</p>`;
         console.log(error);
     }

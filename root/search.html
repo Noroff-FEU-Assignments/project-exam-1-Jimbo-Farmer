@@ -43,8 +43,8 @@
                 <a href="contact.html">Contact</a>
                 <div class="search-container here">
                     <div class="inner-search-container">
-                    <input id="search-field" type="search" placeholder="Search">
-                    <input type="submit" id="search-go" value="GO">
+                        <input id="search-field" type="search" placeholder="Search"
+                        ><input type="submit" id="search-go" value="GO">            <!-- need to do this to avoid whitespace --> 
                     </div>
                 </div>
             </div>
@@ -52,12 +52,11 @@
     </header>
         
     <main>
-        <div class="page-headline">
-            <img src="images/Blue-Sky.jpg" alt="Sunrise">
-            <h1 id="page-title">Search Results for <span id="search-term"></span></h1>
-        </div>
+        <h1 id="page-title">Search Results for <span id="search-term"></span></h1>
+        
         <div class="blog-list">
-            <section class="posts all loading results"></section>
+            <div class="loading"></div>
+            <section class="posts all results"></section>
         </div>   
         <div class="bottom-banner-image"><img src="" alt=""></div>
     </main>

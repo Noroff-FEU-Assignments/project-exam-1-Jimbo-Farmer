@@ -17,10 +17,6 @@
     margin: 18px auto;
 }
 
-.posts.results .post-tile{
-    margin: 18px 1.5%;
-}
-
 .tile-block {
     flex: 0 0 100%;
     display: flex;
@@ -31,7 +27,7 @@
 .post-tile {
     border: 2px solid black;
     padding-bottom: 12px;
-    margin: 0 auto;
+    margin: 12px auto;
     color: black;
     /* background-color: #FFF3F3;    */
     /* display: flex;
@@ -42,7 +38,13 @@
     display: grid;
     grid-template-rows: [title-start] 20% [title-end] 40% [image-end] 40% [excerpt-end];
     width: 90%;
-    max-width: 300px;  
+    max-width: 330px;  
+    transition: all 100ms linear;
+}
+
+.post-tile:hover, .post-tile:focus {
+    box-shadow: 2px 2px 1px #027CC1;
+    transform: translate(-2px, -2px);
 }
 
 .post-tile h2, .post-tile p {
@@ -68,10 +70,6 @@
 
 a {
     text-decoration: none;
-}
-
-.posts a:focus {
-    background-color: lightblue;
 }
 
 .carousel {
@@ -130,15 +128,15 @@ a {
 }
 .previous {
     left: 12px;
-    rotate: 180deg;
+    transform: rotate(180deg);
 }
 .arrow-top {
-    rotate: 40deg;
+    transform: rotate(40deg);
     top: 16px;
     
 }
 .arrow-bottom {
-    rotate: -40deg;
+    transform: rotate(-40deg);
     top: 26px;
 }
 
@@ -177,6 +175,13 @@ a {
     border-radius: 50%;
     display: inline-block;
     margin: auto 6px;
+}
+
+.index-dot:hover {
+    cursor: pointer;
+}
+.index-dot:focus {
+    background-color: #FACE3C;
 }
 
 .filled-in {

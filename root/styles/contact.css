@@ -1,8 +1,8 @@
 body {
-    background-color: #303030;
+    background-color: #027CC1;
 }
 
-.page-headline h1 {
+h1 {
     color: white;
 }
 
@@ -42,7 +42,7 @@ button {
 
 button:hover, button:focus{
     cursor: pointer;
-    background-color: #027CC1;
+    background-color: #303030;
     color: white;
 }
 

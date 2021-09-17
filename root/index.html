@@ -41,24 +41,20 @@
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <div class="search-container">
-                    <div class="inner-search-container">
-                    <input id="search-field" type="search" placeholder="Search">
-                    <input type="submit" id="search-go" value="GO">
-                    </div>
+                    <input id="search-field" type="search" placeholder="Search"
+                    ><input type="submit" id="search-go" value="GO">            <!-- need to do this to avoid whitespace --> 
                 </div>
             </div>
         </div>
     </header>
         
     <main>
-        <div class="page-headline">
-            <img src="images/Blue-Sky.jpg" alt="Sunrise">
-            <h1 id="page-title">Latest Articles</h1>
-        </div>
+        <h1 id="page-title">Latest Articles</h1>
         <div class="carousel">
             <button tabindex="0" aria-label="next button" class="next"><div class="arrow-top"></div><div class="arrow-bottom"></div></button>
             <button tabindex="0" aria-label="previous button" class="previous"><div class="arrow-top"></div><div class="arrow-bottom"></div></button>
-            <section class="posts loading"></section>
+            <div class="loading"></div>
+            <section class="posts"></section>
             <div class="index-display"></div>
         </div>   
         <div class="bottom-banner-image"><img src="" alt=""></div>

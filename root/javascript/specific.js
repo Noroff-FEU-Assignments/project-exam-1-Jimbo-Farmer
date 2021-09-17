@@ -7,7 +7,7 @@ const urlExt = id;
 
 const blogContainer = document.querySelector(".full-blog");
 const meta = document.querySelector("#meta-description");
-
+const loadingIndicator = document.querySelector(".loading");
 
 async function getBlogPost(){
     try { 
@@ -15,7 +15,7 @@ async function getBlogPost(){
         const output = await response.json(); 
                
         function generateHtml(){
-            blogContainer.classList.remove("loading");
+            loadingIndicator.classList.remove("loading");
             document.title = `Transform Tomorrow | ${output.title.rendered}`;
             blogContainer.innerHTML = `<div class="blog-post">
             <h1>${output.title.rendered}</h1>

@@ -72,6 +72,7 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 to do:
 
 - Accessibility - tabbable and focus psuedo classes. No keyboard traps. 
+- modal to work with keyboard
 
 - More images. 
 
@@ -80,3 +81,4 @@ to do:
 - Contact info sent to wordpress.   
 
 - headless mode redirect. 
+
