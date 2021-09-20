@@ -192,6 +192,8 @@ h1 {
     font-size: 1.75rem;
     text-align: center;
     color: black;
+    margin-top: 0;
+    padding-top: 24px;
 }
 
 h2 {
@@ -202,7 +204,9 @@ main {
     min-height: 100vh;
     background-image: url(../images/Background-Placeholder.jpg);
     background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: top;
 }
 
 /* .bottom-banner-image {

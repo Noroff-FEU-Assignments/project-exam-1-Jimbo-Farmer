@@ -61,6 +61,11 @@ message.onblur = function(){
     checkFormComplete();
 }
 
+message.onkeyup = checkFormComplete;
+nameInput.onkeyup = checkFormComplete;
+email.onkeyup = checkFormComplete;
+subject.onkeyup = checkFormComplete;
+
 button.addEventListener("click", form.submit);
 
 function lengthCheck(input, desiredLength){
@@ -77,3 +82,9 @@ function emailCheck(emailInput){
     return isValid;
 }
 
+
+
+// Add redirect for form success. 
+document.addEventListener('submit', function(){
+    window.location.href = "https://inspiring-brattain-4548ec.netlify.app/contact.html#success"
+})

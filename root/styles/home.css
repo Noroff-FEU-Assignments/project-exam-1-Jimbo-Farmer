@@ -38,7 +38,7 @@
     display: grid;
     grid-template-rows: [title-start] 20% [title-end] 40% [image-end] 40% [excerpt-end];
     width: 90%;
-    max-width: 330px;  
+    max-width: 300px;  
     transition: all 100ms linear;
 }
 
