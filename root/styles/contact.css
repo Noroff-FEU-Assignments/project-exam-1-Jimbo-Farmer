@@ -72,7 +72,7 @@ button:disabled:hover{
     font-size: 1.3125rem;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
-    z-index: 100;
+    z-index: 550;
     animation: expand 0.5s;   
     animation-timing-function: ease-out; 
 }
@@ -87,8 +87,9 @@ button:disabled:hover{
     top: 20%;
     border: 1px solid  #FACE3C;
     width: 60%;
+    max-width: 400px;
     margin: 50px auto;
-    background-color: black;
+    background-color: #303030;
     padding: 30px;
     
 }
