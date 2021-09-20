@@ -1,5 +1,5 @@
 const button = document.querySelector("button");
-const form = document.querySelector("form");
+const form = document.querySelector("#contact-form");
 
 const inputs = document.querySelectorAll("input");
 const notification = document.querySelector(".message");
@@ -66,7 +66,7 @@ nameInput.onkeyup = checkFormComplete;
 email.onkeyup = checkFormComplete;
 subject.onkeyup = checkFormComplete;
 
-button.addEventListener("click", form.submit);
+
 
 function lengthCheck(input, desiredLength){
     if(input >= desiredLength){
@@ -83,8 +83,23 @@ function emailCheck(emailInput){
 }
 
 
+form.onsubmit = async function(event){
+    event.preventDefault();
+    const response = await fetch(event.target.action, {
+        method: event.target.method,
+        body: new FormData(form),
+    })
+    const output = await response.json();
+    console.log(output);
+    location.href = "contact.html#success";
+}
+
+
+
+
+
 
 // Add redirect for form success. 
-document.addEventListener('submit', function(){
-    window.location.href = "https://inspiring-brattain-4548ec.netlify.app/contact.html#success"
-})
+// document.addEventListener('submit', function(){
+//     window.location.href = "https://inspiring-brattain-4548ec.netlify.app/contact.html#success"
+// })
