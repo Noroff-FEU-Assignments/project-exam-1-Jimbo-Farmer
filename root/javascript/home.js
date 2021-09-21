@@ -100,36 +100,43 @@ async function getPosts(){
         
 
         function next(){
-            position += windowWidth;
-            positionIndex += 1;
-            indexDots[positionIndex].classList.add("filled-in");            
-            indexDots[positionIndex-1].classList.remove("filled-in");
-            updateTabIndex();
-            previousButton.disabled = false;
-            for(let i= 0; i < tileBlocks.length; i++){
-                tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
-                       
-            }
-            console.log(position)
-            if(position === (blocks -1) * windowWidth){
-                nextButton.disabled = true;
-            }
+            if(nextButton.disabled){
+                return;
+            } else {
+                position += windowWidth;
+                positionIndex += 1;
+                indexDots[positionIndex].classList.add("filled-in");            
+                indexDots[positionIndex-1].classList.remove("filled-in");
+                updateTabIndex();
+                previousButton.disabled = false;
+                for(let i= 0; i < tileBlocks.length; i++){
+                    tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel      
+                }
+                console.log(position)
+                if(position === (blocks -1) * windowWidth){
+                    nextButton.disabled = true;
+                }
+            } 
         }
 
         function previous(){
-            position -= windowWidth;
-            positionIndex -= 1;
-            indexDots[positionIndex].classList.add("filled-in");
-            indexDots[positionIndex+1].classList.remove("filled-in");
-            updateTabIndex();
-            nextButton.disabled = false;
-            for(let i= 0; i < tileBlocks.length; i++){
-                tileBlocks[i].style.transform = "translateX(-"+position+"px)";
-                
-            }
-            if(position === 0){
-                previousButton.disabled = true;
-            } 
+            if(previousButton.disabled){
+                return;
+            } else {
+                position -= windowWidth;
+                positionIndex -= 1;
+                indexDots[positionIndex].classList.add("filled-in");
+                indexDots[positionIndex+1].classList.remove("filled-in");
+                updateTabIndex();
+                nextButton.disabled = false;
+                for(let i= 0; i < tileBlocks.length; i++){
+                    tileBlocks[i].style.transform = "translateX(-"+position+"px)";
+                    
+                }
+                if(position === 0){
+                    previousButton.disabled = true;
+                }
+            }   
         }
 
         nextButton.addEventListener("click", next);
@@ -189,13 +196,18 @@ async function getPosts(){
         for(let i = 0; i < postTiles.length; i++){
             postTiles[i].addEventListener("touchstart", function(){
                 xTouchStart = event.touches[0].clientX;
+                document.body.style.height = "100%";
+                document.body.style.overflow = "hidden";
             })
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
+                document.body.style.height = "unset";
+                document.body.style.overflow = "unset";
                 if((xTouchEnd - xTouchStart) < -30){
                     next();
                 } else if ((xTouchEnd - xTouchStart) > 30){
                     previous();
+
                 }
                 
             })
