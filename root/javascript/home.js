@@ -193,10 +193,11 @@ async function getPosts(){
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
                 if((xTouchEnd - xTouchStart) < -30){
-                    next;
+                    next();
                 } else if ((xTouchEnd - xTouchStart) > 30){
-                    previous;
+                    previous();
                 }
+                
             })
             
         }
