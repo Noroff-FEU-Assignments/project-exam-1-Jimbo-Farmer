@@ -179,10 +179,10 @@ async function getPosts(){
         let xTouchEnd;
 
         for(let i = 0; i < postTiles.length; i++){
-            postTiles[i].addEventListener("mousedown", function(){
+            postTiles[i].addEventListener("touchstart", function(){
                 xTouchStart = event.clientX;
             })
-            postTiles[i].addEventListener("mouseup", function(){
+            postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.clientX;
             })
             if((xTouchEnd - xTouchStart) < -30){
