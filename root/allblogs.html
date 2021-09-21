@@ -52,6 +52,22 @@
         
     <main>
         <h1 id="page-title">All Posts</h1>
+        <div class="filter">
+
+            <label for="book">Book Summaries</label>
+            <input class="category" type="radio" name="category" id="book" value="&categories[0]=2">
+
+            <label for="essays">Essays</label>
+            <input class="category" type="radio" name="category" id="essays" value="&categories[0]=3">
+
+            <label for="all">All</label>
+            <input class="category" type="radio" name="category" id="all" value="">
+
+            <!-- <button class="category" id="book" value="&categories[0]=2">Book Summaries</button>
+            <button class="category" id="essay"  value="&categories[0]=3">Essays</button>
+            <button class="category" id="all"  value="">All</button> -->
+        </div>
+        
         <div class="blog-list">
             <div class="loading"></div>
             <section class="posts all"></section>

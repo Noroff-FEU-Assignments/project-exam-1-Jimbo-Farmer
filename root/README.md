@@ -76,7 +76,7 @@ to do:
 
 - More images. - Helene working on this
 
-- Touch capability for carousel.
+<!-- - Touch capability for carousel. - done --> 
 
 <!-- - Contact info sent to wordpress.  -  done -->
 

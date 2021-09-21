@@ -95,13 +95,13 @@
 
 @media (min-width: 1000px){
     .post-tile{
-        width: 29%;
+        width: 31%;
     }
     form, input, textarea, .see-more, .button-container button {
         font-size: 1.325rem;
     }
     body {
-        font-size: 1.325rem;
+        font-size: 1.3125rem;
     }
     /* .bottom-banner-image { 
         min-height: 400px;
@@ -127,14 +127,14 @@
 @media (min-width: 1450px){
     
     .post-tile{
-        width: 21%;
+        width: 23%;
     }
     
     h1 {
         font-size: 2.1875rem;
     }
     p, a {
-        font-size: 1.3125rem;
+        font-size: 1.3125rem;                           /* possibly obsolete */
     }  
     .full-blog .modal-box.open img {
         max-height: 90vh;

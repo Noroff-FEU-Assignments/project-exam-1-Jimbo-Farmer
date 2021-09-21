@@ -29,7 +29,7 @@
     padding-bottom: 12px;
     margin: 12px auto;
     color: black;
-    background-color: #FFF3F3;   
+    background-color: #FFFDFB;   
     /* display: flex;
     flex-direction: column; */
     align-items: stretch;
@@ -190,4 +190,26 @@ a {
 
 .filled-in {
     background-color: black;
+}
+
+.welcome {
+    margin: 0 5%;
+    color: black;
+    background-color: #FFFDFB;
+    padding: 24px;
+    text-align: center;
+}
+.welcome div {
+    text-align: left;
+    display: inline-block;
+}
+.welcome p {
+    line-height: 2rem;
+    width: 90%;
+    max-width: 800px;
+}
+
+
+.filter {
+    text-align: center;
 }

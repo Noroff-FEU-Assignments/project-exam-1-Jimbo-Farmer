@@ -3,8 +3,12 @@ const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&p
 const loadMore = document.querySelector(".see-more");
 const loadingIndicator = document.querySelector(".loading");
 
+const categoryButtons = document.querySelectorAll(".category");
+const h1 = document.querySelector("h1");
+let urlExt = "";
+
 let tileQty = 8;
-async function getPosts(){
+async function getPosts(url){
     try { 
         const response = await fetch(url);
         const output = await response.json();
@@ -14,6 +18,8 @@ async function getPosts(){
             if(tileQty >= output.length){
                 tileQty = output.length;
                 loadMore.disabled = true;
+            } else {
+                loadMore.disabled = false;
             }
             loadingIndicator.classList.remove("loading");
             for(let i = 0; i < tileQty; i++){
@@ -51,7 +57,9 @@ async function getPosts(){
         loadMore.onclick = function(){
             extraTileQty = 4;
             generateExtraHtml();
-        }     
+        } 
+        
+        
 
     } catch (error) {
         console.log(error)
@@ -59,4 +67,15 @@ async function getPosts(){
         blogList.innerHTML =`<p>Apologies, an error has occurred</p>`;
     }
 }
-getPosts();
+getPosts(url);
+
+
+
+for(let i = 0; i < categoryButtons.length; i++){
+    categoryButtons[i].addEventListener("click", function(){
+        let urlExt = event.target.value;
+        tileQty = 8;
+        getPosts(url+urlExt);
+        console.log("clicked")
+    })
+}

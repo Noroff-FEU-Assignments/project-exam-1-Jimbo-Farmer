@@ -196,13 +196,9 @@ async function getPosts(){
         for(let i = 0; i < postTiles.length; i++){
             postTiles[i].addEventListener("touchstart", function(){
                 xTouchStart = event.touches[0].clientX;
-                document.body.style.height = "100%";
-                document.body.style.overflow = "hidden";
             })
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
-                document.body.style.height = "unset";
-                document.body.style.overflow = "unset";
                 if((xTouchEnd - xTouchStart) < -30){
                     next();
                 } else if ((xTouchEnd - xTouchStart) > 30){
