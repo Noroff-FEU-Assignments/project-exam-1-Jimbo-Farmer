@@ -94,7 +94,12 @@ async function getPosts(){
         const indexDots = document.querySelectorAll(".index-dot");
         indexDots[0].classList.add("filled-in");
 
-        nextButton.addEventListener("click", function(){
+
+
+
+        
+
+        function next(){
             position += windowWidth;
             positionIndex += 1;
             indexDots[positionIndex].classList.add("filled-in");            
@@ -109,9 +114,9 @@ async function getPosts(){
             if(position === (blocks -1) * windowWidth){
                 nextButton.disabled = true;
             }
-        })
-        
-        previousButton.addEventListener("click", function(){
+        }
+
+        function previous(){
             position -= windowWidth;
             positionIndex -= 1;
             indexDots[positionIndex].classList.add("filled-in");
@@ -125,7 +130,10 @@ async function getPosts(){
             if(position === 0){
                 previousButton.disabled = true;
             } 
-        }) 
+        }
+
+        nextButton.addEventListener("click", next);
+        previousButton.addEventListener("click", previous); 
 
         function checkButtonDisable(){
             if(position === 0){
@@ -185,20 +193,9 @@ async function getPosts(){
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
                 if((xTouchEnd - xTouchStart) < -30){
-                    position += windowWidth;
-                    positionIndex += 1;
-                    indexDots[positionIndex].classList.add("filled-in");            
-                    indexDots[positionIndex-1].classList.remove("filled-in");
-                    updateTabIndex();
-                    previousButton.disabled = false;
-                    for(let i= 0; i < tileBlocks.length; i++){
-                        tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
-                               
-                    }
-                    console.log(position)
-                    if(position === (blocks -1) * windowWidth){
-                        nextButton.disabled = true;
-                    } 
+                    next;
+                } else if ((xTouchEnd - xTouchStart) > 30){
+                    previous;
                 }
             })
             
