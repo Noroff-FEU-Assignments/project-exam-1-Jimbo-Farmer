@@ -184,23 +184,24 @@ async function getPosts(){
             })
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
-            })
-            if((xTouchEnd - xTouchStart) < -30){
-                position += windowWidth;
-                positionIndex += 1;
-                indexDots[positionIndex].classList.add("filled-in");            
-                indexDots[positionIndex-1].classList.remove("filled-in");
-                updateTabIndex();
-                previousButton.disabled = false;
-                for(let i= 0; i < tileBlocks.length; i++){
-                    tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
-                           
+                if((xTouchEnd - xTouchStart) < -30){
+                    position += windowWidth;
+                    positionIndex += 1;
+                    indexDots[positionIndex].classList.add("filled-in");            
+                    indexDots[positionIndex-1].classList.remove("filled-in");
+                    updateTabIndex();
+                    previousButton.disabled = false;
+                    for(let i= 0; i < tileBlocks.length; i++){
+                        tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
+                               
+                    }
+                    console.log(position)
+                    if(position === (blocks -1) * windowWidth){
+                        nextButton.disabled = true;
+                    } 
                 }
-                console.log(position)
-                if(position === (blocks -1) * windowWidth){
-                    nextButton.disabled = true;
-                } 
-            }
+            })
+            
         }
 
       
