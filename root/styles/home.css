@@ -38,7 +38,8 @@
     display: grid;
     grid-template-rows: [title-start] 20% [title-end] 40% [image-end] 40% [excerpt-end];
     width: 90%;
-    max-width: 300px;  
+    max-width: 300px; 
+    min-width: 250px; 
     transition: all 100ms linear;
 }
 
@@ -74,7 +75,7 @@ a {
 
 .carousel {
     position: relative;
-    margin: 24px 0;
+    margin: 24px 12px;
 }
 
 .previous, .next {

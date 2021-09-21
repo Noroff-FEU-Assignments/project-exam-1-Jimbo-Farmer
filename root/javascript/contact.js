@@ -22,10 +22,13 @@ button.disabled = true;
 function checkFormComplete(){
     if((lengthCheck(nameInput.value.trim().length, 5)) && (emailCheck(email.value))&&(lengthCheck(subject.value.trim().length, 15))&&(lengthCheck(message.value.trim().length, 25))){
         button.disabled = false;
+        messageError.style.visibility = "hidden";
+        nameError.style.visibility = "hidden";
+        emailError.style.visibility = "hidden";
+        subjectError.style.visibility = "hidden";
     } else {
         button.disabled = true;
     }
-    console.log("checked")
 }
 
 nameInput.onblur = function(){
@@ -82,24 +85,23 @@ function emailCheck(emailInput){
     return isValid;
 }
 
+const loadingIndicator = document.querySelector(".loading-indicator");
+
+
 
 form.onsubmit = async function(event){
+    button.innerHTML = "Sending...";
+    loadingIndicator.classList.add("loading");
     event.preventDefault();
+
     const response = await fetch(event.target.action, {
         method: event.target.method,
         body: new FormData(form),
     })
     const output = await response.json();
-    console.log(output);
+    loadingIndicator.classList.remove("loading");
     location.href = "contact.html#success";
 }
 
 
 
-
-
-
-// Add redirect for form success. 
-// document.addEventListener('submit', function(){
-//     window.location.href = "https://inspiring-brattain-4548ec.netlify.app/contact.html#success"
-// })

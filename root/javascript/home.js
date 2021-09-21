@@ -93,6 +93,7 @@ async function getPosts(){
         windowWidth = latestPosts.clientWidth;  //Needed later for previous and next buttons to slide content left and right. 
         const indexDots = document.querySelectorAll(".index-dot");
         indexDots[0].classList.add("filled-in");
+
         nextButton.addEventListener("click", function(){
             position += windowWidth;
             positionIndex += 1;
@@ -173,6 +174,16 @@ async function getPosts(){
               }
         }
         
+        //Touch ability for carousel
+        let xTouchStart;
+        let xTouchEnd;
+
+        for(let i = 0; i < postTiles.length; i++){
+            postTiles[i].ontouchstart = function(){
+                postTiles[i].style.backgoundColor = "black";
+            }
+        }
+
       
 
     } catch(error) {

@@ -78,8 +78,12 @@ to do:
 
 - Touch capability for carousel.
 
-- Contact info sent to wordpress.   
+<!-- - Contact info sent to wordpress.  -  done -->
 
 <!-- - headless mode redirect. -done -->
 
 <!-- - contact page continuous validation - done -->
+
+- Comments?
+
+- Welcome to the blog?
