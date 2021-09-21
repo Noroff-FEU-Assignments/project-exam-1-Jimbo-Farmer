@@ -180,10 +180,10 @@ async function getPosts(){
 
         for(let i = 0; i < postTiles.length; i++){
             postTiles[i].addEventListener("touchstart", function(){
-                xTouchStart = event.clientX;
+                xTouchStart = event.touches[0].clientX;
             })
             postTiles[i].addEventListener("touchend", function(){
-                xTouchEnd = event.clientX;
+                xTouchEnd = event.changedTouches[0].clientX;
             })
             if((xTouchEnd - xTouchStart) < -30){
                 position += windowWidth;
