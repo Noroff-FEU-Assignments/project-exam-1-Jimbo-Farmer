@@ -179,8 +179,27 @@ async function getPosts(){
         let xTouchEnd;
 
         for(let i = 0; i < postTiles.length; i++){
-            postTiles[i].ontouchstart = function(){
-                postTiles[i].style.backgoundColor = "black";
+            postTiles[i].addEventListener("mousedown", function(){
+                xTouchStart = event.clientX;
+            })
+            postTiles[i].addEventListener("mouseup", function(){
+                xTouchEnd = event.clientX;
+            })
+            if((xTouchEnd - xTouchStart) < -30){
+                position += windowWidth;
+                positionIndex += 1;
+                indexDots[positionIndex].classList.add("filled-in");            
+                indexDots[positionIndex-1].classList.remove("filled-in");
+                updateTabIndex();
+                previousButton.disabled = false;
+                for(let i= 0; i < tileBlocks.length; i++){
+                    tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel
+                           
+                }
+                console.log(position)
+                if(position === (blocks -1) * windowWidth){
+                    nextButton.disabled = true;
+                } 
             }
         }
 
