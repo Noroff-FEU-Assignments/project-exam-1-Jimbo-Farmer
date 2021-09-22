@@ -48,7 +48,7 @@ main {
 }
 
 .post-tile:hover, .post-tile:focus {
-    box-shadow: 2px 2px 1px #027CC1;
+    box-shadow: 2px 2px 1px #303030;
     transform: translate(-2px, -2px);
 }
 
@@ -91,7 +91,7 @@ a {
     border-radius: 50%;
     box-shadow: none;
     border: 1px solid black;
-    background-color: #027CC1;
+    background-color: #FACE3C;
     width: 48px;
     height: 48px;
     top: 196px;
@@ -101,10 +101,12 @@ a {
 .previous:hover, .next:hover {
     cursor: pointer;
     border-width: 2px;
+    background-color: white;
 }
 
 .previous:focus, .next:focus {
     border-width: 2px;
+    background-color: #FACE3C;
 }
 .next:focus {
     animation: pop 1s 1;
@@ -126,7 +128,7 @@ a {
 .arrow-top, .arrow-bottom{
     width: 20px;
     height: 5px;
-    background-color: white;
+    background-color: #303030;
     position: absolute;
     left: 33%;
     border-radius: 2px;
@@ -154,11 +156,11 @@ a {
     display: block;
 }
 
-.see-more:hover, .see-more:focus {
+/* .see-more:hover, .see-more:focus {
     cursor: pointer;
     background-color: #027CC1;
     color: white;
-}
+} */
 
 .see-more:disabled {
     background-color: lightgray;
@@ -174,7 +176,7 @@ a {
 .index-dot {
     height: 12px;
     width: 12px;
-    border: 1px solid black;
+    border: 1px solid #303030;
     border-radius: 50%;
     display: inline-block;
     margin: auto 6px;
@@ -188,7 +190,7 @@ a {
 }
 
 .filled-in {
-    background-color: black;
+    background-color: #fffdfb;
 }
 
 .welcome {
@@ -219,6 +221,10 @@ a {
     background-color: #FACE3C;
     border: 1px solid #303030;
     padding: 4px 36px;
+}
+
+.filter label:hover {
+    border: 2px solid #303030;
 }
 
 .filter input {

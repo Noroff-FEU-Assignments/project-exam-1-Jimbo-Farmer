@@ -28,12 +28,6 @@ input, textarea{
     min-width: unset;
 }
 
-button:hover, button:focus{
-    cursor: pointer;
-    background-color: #303030;
-    color: white;
-}
-
 button:disabled {
     opacity: 0.4;
     cursor: unset;

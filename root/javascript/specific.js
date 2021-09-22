@@ -128,7 +128,7 @@ async function getComments(postId){
         const response = await fetch("http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/comments?post="+postId);
         const output = await response.json(); 
         console.log(output);
-        if(output){
+        if(output.length > 0){
             commentsSection.innerHTML = `<h3>Comments</h3>`
             for(let i = 0; i < output.length; i++){
                 commentsSection.innerHTML += `

@@ -193,7 +193,6 @@ h1 {
     text-transform: uppercase;
     font-size: 1.75rem;
     text-align: center;
-    color: black;
     margin-top: 0;
     padding-top: 24px;
 }
@@ -204,7 +203,8 @@ h2 {
 
 main {
     min-height: 100vh;
-    background-image: url(../images/Background-Placeholder.jpg);
+    background-color: #027CC1;
+    /* background-image: url(../images/bg-trial3.jpg); */
     background-size: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -248,4 +248,10 @@ button {
 }
 .button-container {
     text-align: center;
+}
+
+button:hover, button:focus{
+    cursor: pointer;
+    background-color: #303030;
+    color: white;
 }
