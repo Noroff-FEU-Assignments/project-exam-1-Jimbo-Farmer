@@ -31,6 +31,8 @@ async function getBlogPost(){
         }
         generateHtml();  
 
+        // modal js-------------
+
         let images =[];
         if(document.querySelector(".wp-block-image")){                          //Check for images in the article before attempting to add them.
             images.push(document.querySelectorAll(".wp-block-image img")[0]);
@@ -80,21 +82,7 @@ async function getBlogPost(){
             })
         }
 
-        form.onsubmit = async function(event){
-            submitButton.innerHTML = "Submitting...";
-            loadingIndicator.classList.add("loading");
-            event.preventDefault();
-            let formData = JSON.stringify({"post": id, "commenterName": "james", "commenterEmail": "james1farmer@yahoo.co.uk", "message": "hello"});
-            console.log(formData);
-            const response = await fetch(event.target.action, {
-                method: event.target.method,
-                body: formData,    
-            })
-            
-            const output = await response.json();
-            loadingIndicator.classList.remove("loading");
-            console.log(output);
-        }
+        
 
                 
         
@@ -108,5 +96,28 @@ getBlogPost();
 
 
 
-// modal js-------------
 
+
+form.onsubmit = async function(event){
+    submitButton.innerHTML = "Submitting...";
+    loadingIndicator.classList.add("loading");
+    // event.preventDefault();
+    let formData = JSON.stringify({
+        post: 52, 
+        Name: document.querySelector("#commenter-name").value, 
+        Email: document.querySelector("#commenter-email").value, 
+        Comment: document.querySelector("#comment").value,
+    });
+    console.log(formData);
+    const response = await fetch(event.target.action, {
+        method: event.target.method,
+        headers: {
+            "Content-Type": "application/json",
+          },
+        body: formData,    
+    })
+    
+    const output = await response.json();
+    loadingIndicator.classList.remove("loading");
+    console.log(output);
+}
