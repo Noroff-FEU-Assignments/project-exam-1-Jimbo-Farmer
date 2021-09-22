@@ -119,3 +119,29 @@ form.onsubmit = async function(event){
     loadingIndicator.classList.remove("loading");
     window.location.reload();
 }
+
+
+const commentsSection = document.querySelector(".existing-comments");
+
+async function getComments(postId){
+    try {
+        const response = await fetch("http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/comments?post="+postId);
+        const output = await response.json(); 
+        console.log(output);
+        if(output){
+            commentsSection.innerHTML = `<h3>Comments</h3>`
+            for(let i = 0; i < output.length; i++){
+                commentsSection.innerHTML += `
+                <div class="comment-tile">
+                <h4>${output[i].author_name}</h4>
+                ${output[i].content.rendered} 
+                </div> 
+                `
+            }   
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+getComments(id);

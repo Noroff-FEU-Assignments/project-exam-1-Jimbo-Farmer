@@ -78,12 +78,26 @@ h1 {
     max-width: 700px;
     margin: 24px auto;
 }
+.comments label {
+    width: 100%;
+    display: inline-block;
+}
 
 .comments input, .comments textarea {
     display: inline-block;
-    width: 100%;    
+    width: 98%;    
 }
 
 .button-container {
     margin-top: 24px;
+}
+
+
+.comment-tile{
+    border: 1px solid #303030;
+    padding: 0 12px;
+    margin: 12px auto;
+    background-color: #FFFDFB;
+    color: black;
+
 }
