@@ -28,19 +28,6 @@ input, textarea{
     min-width: unset;
 }
 
-.button-container {
-    text-align: center;
-}
-
-button {
-    padding: 12px 48px;
-    font-size: 1rem;
-    margin: 0 auto;
-    background-color: #FACE3C;
-    border: none;
-    -webkit-appearance: none;
-}
-
 button:hover, button:focus{
     cursor: pointer;
     background-color: #303030;

@@ -101,23 +101,21 @@ getBlogPost();
 form.onsubmit = async function(event){
     submitButton.innerHTML = "Submitting...";
     loadingIndicator.classList.add("loading");
-    // event.preventDefault();
-    let formData = JSON.stringify({
-        post: 52, 
-        Name: document.querySelector("#commenter-name").value, 
-        Email: document.querySelector("#commenter-email").value, 
-        Comment: document.querySelector("#comment").value,
-    });
-    console.log(formData);
+    event.preventDefault();
+    let formData = {
+        post: id, 
+        author_name: document.querySelector("#commenter-name").value, 
+        author_email: document.querySelector("#commenter-email").value, 
+        content: document.querySelector("#comment").value,
+    };
     const response = await fetch(event.target.action, {
         method: event.target.method,
         headers: {
             "Content-Type": "application/json",
           },
-        body: formData,    
+        body: JSON.stringify(formData),    
     })
-    
     const output = await response.json();
     loadingIndicator.classList.remove("loading");
-    console.log(output);
+    window.location.reload();
 }
