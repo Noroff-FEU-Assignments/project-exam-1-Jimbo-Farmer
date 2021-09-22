@@ -9,6 +9,9 @@ const blogContainer = document.querySelector(".full-blog");
 const meta = document.querySelector("#meta-description");
 const loadingIndicator = document.querySelector(".loading");
 
+const form = document.querySelector("#comment-form");
+const submitButton = document.querySelector("#comment-submit");
+
 async function getBlogPost(){
     try { 
         const response = await fetch(url+urlExt+"?_embed");
@@ -76,7 +79,23 @@ async function getBlogPost(){
                 }
             })
         }
-        
+
+        form.onsubmit = async function(event){
+            submitButton.innerHTML = "Submitting...";
+            loadingIndicator.classList.add("loading");
+            event.preventDefault();
+            let formData = JSON.stringify({"post": id, "commenterName": "james", "commenterEmail": "james1farmer@yahoo.co.uk", "message": "hello"});
+            console.log(formData);
+            const response = await fetch(event.target.action, {
+                method: event.target.method,
+                body: formData,    
+            })
+            
+            const output = await response.json();
+            loadingIndicator.classList.remove("loading");
+            console.log(output);
+        }
+
                 
         
     } catch (error) {
