@@ -69,8 +69,6 @@ nameInput.onkeyup = checkFormComplete;
 email.onkeyup = checkFormComplete;
 subject.onkeyup = checkFormComplete;
 
-
-
 function lengthCheck(input, desiredLength){
     if(input >= desiredLength){
         return true;
@@ -87,8 +85,6 @@ function emailCheck(emailInput){
 
 const loadingIndicator = document.querySelector(".loading-indicator");
 
-
-
 form.onsubmit = async function(event){
     button.innerHTML = "Sending...";
     loadingIndicator.classList.add("loading");
@@ -98,10 +94,13 @@ form.onsubmit = async function(event){
         method: event.target.method,
         body: new FormData(form),
     })
-    const output = await response.json();
     loadingIndicator.classList.remove("loading");
-    console.log(response)
-    //location.href = "contact.html#success";
+    if(response.ok){
+        location.href = "contact.html#success";
+    } else {
+        document.querySelector(".error-message").innerHTML = `
+        <h2>Apologies, an error has occurred</h2>`
+    }
 }
 
 
