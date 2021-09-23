@@ -55,15 +55,15 @@
         <article class="full-blog"></article>
         <div class="comments">
             <div class="existing-comments"></div>
-            <h3>Feel free to leave a comment</h3>
             <form id="comment-form" action="https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/comments" method="POST">
+                <h3>Feel free to leave a comment</h3>
                 <label for="name">Name
                     <input type="text" name="name" id="commenter-name">
                 </label>
                 <label for="email">Email
                     <input type="email" name="email" id="commenter-email">
                 </label>
-                <label for="message">Comment
+                <label for="message">Comment (blank comments will not be saved)
                     <textarea name="message" id="comment" cols="30" rows="8"></textarea>
                 </label>
                 <div class="button-container"><button id="comment-submit" type="submit">Submit</button></div>

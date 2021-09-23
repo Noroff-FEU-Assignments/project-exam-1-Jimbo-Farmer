@@ -213,14 +213,13 @@ a {
 
 .filter {
     text-align: center;
-    color: black;
-    
+    color: black; 
 }
 
 .filter label {
     background-color: #FACE3C;
     border: 1px solid #303030;
-    padding: 4px 36px;
+    padding: 4px 8px;
 }
 
 .filter label:hover {

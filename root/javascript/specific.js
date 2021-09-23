@@ -38,7 +38,7 @@ async function getBlogPost(){
             images.push(document.querySelectorAll(".wp-block-image img")[0]);
             const contentImages = document.querySelectorAll(".wp-block-image img");
             for(let i = 0; i < contentImages.length; i++){
-                contentImages[i].tabIndex = "0";                                //So that keyboard users can access the modal. 
+                contentImages[i].tabIndex = "0";                                //So that keyboard users can access the modal. (featured image is already tabbable)
             }
         }
         
@@ -64,7 +64,6 @@ async function getBlogPost(){
             console.log(event.target)
             modalBox.innerHTML += `<img src="${event.target.src}" alt="${event.target.alt}">`;
             modalBox.classList.add("open"); 
-             
             window.onclick = function(event){
                 if(event.target === modalBox){
                     closeModal();
@@ -80,11 +79,7 @@ async function getBlogPost(){
                     closeModal();
                 }
             })
-        }
-
-        
-
-                
+        }          
         
     } catch (error) {
         console.log(error)
@@ -95,8 +90,7 @@ async function getBlogPost(){
 getBlogPost();
 
 
-
-
+// comment section functionality----------------------------------------
 
 form.onsubmit = async function(event){
     submitButton.innerHTML = "Submitting...";
@@ -120,7 +114,6 @@ form.onsubmit = async function(event){
     window.location.reload();
 }
 
-
 const commentsSection = document.querySelector(".existing-comments");
 
 async function getComments(postId){
@@ -131,6 +124,9 @@ async function getComments(postId){
         if(output.length > 0){
             commentsSection.innerHTML = `<h3>Comments</h3>`
             for(let i = 0; i < output.length; i++){
+                if(output[i].author_name === ""){
+                    output[i].author_name = "Anonymous"
+                }
                 commentsSection.innerHTML += `
                 <div class="comment-tile">
                 <h4>${output[i].author_name}</h4>
