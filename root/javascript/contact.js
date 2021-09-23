@@ -100,7 +100,8 @@ form.onsubmit = async function(event){
     })
     const output = await response.json();
     loadingIndicator.classList.remove("loading");
-    location.href = "contact.html#success";
+    console.log(response)
+    //location.href = "contact.html#success";
 }
 
 

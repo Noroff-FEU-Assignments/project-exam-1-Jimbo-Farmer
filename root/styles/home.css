@@ -67,7 +67,7 @@ main {
 }
 
 .post-tile img {
-    max-height: 250px;
+    /* max-height: 250px; */
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
