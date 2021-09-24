@@ -35,8 +35,6 @@
     }
 }
 
-
-
 @media (min-width: 800px){
     #hamburger {
         display: none;
@@ -68,16 +66,6 @@
     #search-field, #search-go {
         padding: 2px;
     } 
-    main {
-        overflow: hidden;
-    }
-    .page-headline img {
-        visibility: visible;
-        max-height: 200px;
-    }
-    .page-headline h1 {
-        color: white;
-    }    
 }
 
 @media (min-width: 1000px){
@@ -88,7 +76,7 @@
     .nav-items .search-container {
         max-width: 200px;         
     }
-    form, input, textarea, .see-more, .button-container button {
+    input, textarea, button {
         font-size: 1.3125rem;
     }
     body {
@@ -112,21 +100,12 @@
 }
 
 @media (min-width: 1450px){
-    
     .post-tile{
         width: 23%;
     }
-    
     h1 {
         font-size: 2.1875rem;
-    }
-    p, a {
-        font-size: 1.3125rem;                           /* possibly obsolete */
     }  
-    .full-blog .modal-box.open img {
-        max-height: 90vh;
-        top: 5vh;
-    }
     #spec-main {
         padding-top: 48px;
     }

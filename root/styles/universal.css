@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    padding: 0 5%;
+    padding: 6px 5% 12px 5%;
     text-transform: uppercase;
     border-bottom: 2px solid black;
     background-color: #303030;
@@ -22,6 +22,7 @@ header {
 #title {
     max-width: 250px;
 }
+
 #title p {
     line-height: 1em;
 }
@@ -51,9 +52,9 @@ header {
 #hamburger {
     position: absolute;
     right: 5%;
-    top: 6px;
-    width: 74px;
-    height: 66px;
+    top: 8px;
+    width: 70px;
+    height: 60px;
     background-color: black;
     border: 3px solid white;
     border-radius: 10px;
@@ -66,8 +67,8 @@ header {
     background-color: #FACE3C;
     border-radius: 3px;
     position: relative;
-    left: 14px;
-    top: 14px;
+    left: 12px;
+    top: 12px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -76,13 +77,13 @@ header {
 }
 
 .burger-middle{
-    top: 22px;
+    top: 20px;
 }
 .burger-middle.two{
-    top: 15px;
+    top: 13px;
 }   
 #burger-bottom{
-    top: 23px;
+    top: 21px;
 }
 
 /* -----When menu is open------ */
@@ -110,8 +111,6 @@ header {
     padding-top: 140px;
 }
 
-
-
 .nav-items a, .nav-items .search-container {
     display: block;
     width: 60%;
@@ -120,8 +119,7 @@ header {
     padding: 25px 0px 25px 20px;
     margin-top: 2px;
     font-size: 1rem;
-    border: 1px solid #B7B7B7;
-    
+    border: 1px solid #B7B7B7; 
 }
 
 .nav-items a:focus, #search-field:focus, #search-go:focus {
@@ -141,8 +139,11 @@ header {
     cursor: pointer;
 }
 
-.inner-search-container {
-    position: relative;
+#search-field, #search-go {
+    box-shadow: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 #search-field{
@@ -152,10 +153,6 @@ header {
     padding: 4px 2px 4px 2px;
     border-radius: 0;
     border: unset;
-    box-shadow: none;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
     vertical-align: middle;      
 }
 
@@ -164,20 +161,14 @@ header {
 }
 
 #search-go{
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
     border: unset;
     display: inline;
     color: white;
     border-radius: 0;
     background-color: rgb(141, 141, 141);
     font-size: 1rem;
-    padding: 4px 4px;
+    padding: 4px;
     vertical-align: middle;
-}
-#search-go img{
-    height: 25px;
 }
 
 .hidden {
@@ -210,7 +201,7 @@ main {
 .loading {
     width: 60px;
     height: 60px;
-    margin: 0 auto;
+    margin: 12px auto;
     border-radius: 50%;
     border: 20px solid #FACE3C;
     border-left: 20px solid #7e671e;
@@ -252,7 +243,6 @@ button:disabled:hover {
     border-width: 1px;
     color: black;
 }
-
 
 .button-container {
     text-align: center;

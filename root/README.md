@@ -69,21 +69,3 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 
 
 
-to do:
-
-- Accessibility - tabbable and focus psuedo classes. No keyboard traps.  - test screen reader. 
-<!-- - modal to work with keyboard - done -->
-
-- More images. - Helene working on this
-
-<!-- - Touch capability for carousel. - done --> 
-
-<!-- - Contact info sent to wordpress.  -  done -->
-
-<!-- - headless mode redirect. -done -->
-
-<!-- - contact page continuous validation - done -->
-
-- Comments?
-
-- Welcome to the blog?
