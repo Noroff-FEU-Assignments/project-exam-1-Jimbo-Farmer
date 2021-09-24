@@ -66,6 +66,7 @@ async function getPosts(){
                     <img src="${output[j]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[j]._embedded['wp:featuredmedia']['0'].alt_text}">
                     ${output[j].excerpt.rendered}
                     </a>` 
+                    console.log(output[j].id)
                 }
                 indexStart += tiles;
                 indexStop += tiles;
@@ -87,6 +88,8 @@ async function getPosts(){
             }
         }
         updateTabIndex();
+
+        
 
         windowWidth = latestPosts.clientWidth;  //Needed later for previous and next buttons to slide content left and right. 
         const indexDots = document.querySelectorAll(".index-dot");
@@ -175,7 +178,16 @@ async function getPosts(){
                 }
               }
         }
-        
+        for(let i = 0; i < postTiles.length; i++){
+            postTiles[i].addEventListener("keydown", function(){
+                console.log(event);
+                if(event.key === "Enter"){
+                    console.log("pressed"+event)
+                    // window.location.href = this.href;
+                }
+            })
+        }
+
         //Touch ability for carousel
         let xTouchStart;
         let xTouchEnd;
@@ -202,3 +214,5 @@ async function getPosts(){
     }
 }
 getPosts();
+
+

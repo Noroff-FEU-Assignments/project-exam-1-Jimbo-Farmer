@@ -208,21 +208,8 @@ h2 {
 
 main {
     min-height: 100vh;
-    background-color: #027CC1;
-    /* background-image: url(../images/bg-trial3.jpg); */
-    background-size: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
+    background-color: #027CC1;   
 }
-
-/* .bottom-banner-image {
-    background-image: url(../images/Flowers.jpg); 
-    min-height: 200px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-} */
 
 .loading {
     width: 60px;
@@ -251,6 +238,23 @@ button {
     border: 1px solid #303030;
     -webkit-appearance: none;
 }
+
+button:disabled {
+    background-color: lightgray;
+    opacity: 0.3;
+    cursor: auto;
+    border-width: 1px;
+}
+
+button:disabled:hover {
+    background-color: lightgray;
+    opacity: 0.3;
+    cursor: auto;
+    border-width: 1px;
+    color: black;
+}
+
+
 .button-container {
     text-align: center;
 }

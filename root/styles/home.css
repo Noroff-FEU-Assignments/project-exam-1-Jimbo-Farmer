@@ -118,14 +118,6 @@ a {
     100% {transform: scale(1)}
 }
 
-
-.previous:disabled, .next:disabled {
-    background-color: lightgray;
-    opacity: 0.3;
-    cursor: auto;
-    border-width: 1px;
-}
-
 .arrow-top, .arrow-bottom{
     width: 20px;
     height: 5px;

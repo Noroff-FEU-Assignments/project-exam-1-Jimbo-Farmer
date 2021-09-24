@@ -2,10 +2,6 @@ body {
     background-color: #027CC1;
 }
 
-h1 {
-    color: white;
-}
-
 .form-container {
     margin: 48px auto;
     width: 50%;
@@ -17,7 +13,6 @@ input, textarea{
     width: 100%;
     display: block;
     padding: 4px;
-    font-size: 1rem;
 }
 
 #search-go {
@@ -28,19 +23,14 @@ input, textarea{
     min-width: unset;
 }
 
-button:disabled {
-    opacity: 0.4;
-    cursor: unset;
-}
-button:disabled:hover{
-    background-color: #FACE3C;
-    color: #303030;
-}
-
 .form-error {
     margin-bottom: 24px;
-    color: rgb(255, 80, 80);
+    color: #d00;
     visibility: hidden;
+    background-color: white;
+    margin: 4px auto 16px auto;
+    padding: 2px;
+    border-radius: 6px;
 }
 
 #success {
@@ -50,7 +40,6 @@ button:disabled:hover{
     width: 100%;
     height: 100%;
     text-align: center;
-    font-size: 1.3125rem;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
     z-index: 550;

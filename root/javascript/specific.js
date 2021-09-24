@@ -112,7 +112,7 @@ const commentsSection = document.querySelector(".existing-comments");
 
 async function getComments(postId){
     try {
-        const response = await fetch("http://frontendfarmer.com/ProjectExam/wp-json/wp/v2/comments?post="+postId);
+        const response = await fetch("https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/comments?post="+postId);
         const output = await response.json(); 
         console.log(output);
         if(output.length > 0){

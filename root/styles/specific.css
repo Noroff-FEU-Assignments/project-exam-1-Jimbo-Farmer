@@ -1,34 +1,28 @@
-body {
-    background-color: #027CC1;
-}
-
 main {
-    padding-bottom: 24px;
+    padding: 0 5% 24px 0;
 }
 
 .full-blog {
     color: black;
-    background-color: white;
-    margin: 0 5% 24px 0;
-    padding: 24px;
-}
-
-h1 {
-    margin-top: 0;
+    background-color: #FFFDFB
 }
 
 .blog-post {
-    text-align: center;
-    background-color: #FFFDFB;
-}
-
-.featured {
-    display: inline-block;
+    text-align: center; 
+    padding-bottom: 24px;
 }
 
 .wp-block-image, .featured {
     max-width: 80%;
     margin: 16px auto;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+img:focus {
+    border: 1px solid #303030;
 }
 
 .wp-block-image img {
@@ -41,10 +35,7 @@ h1 {
     top: 0;
     left: 0;
     height: 100%;
-    max-width: unset;
-    margin: 0;
     width: 100vw;
-    text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 500;
     animation: expand 0.5s;   
@@ -66,6 +57,7 @@ h1 {
     line-height: 1.5em;
     text-align: left;
     margin: 12px auto;
+    padding: 0 5%;
 }
 
 @keyframes expand {
@@ -78,6 +70,7 @@ h1 {
     max-width: 700px;
     margin: 24px auto;
 }
+
 .comments label {
     width: 100%;
     display: inline-block;
@@ -93,7 +86,6 @@ h1 {
     margin-top: 24px;
 }
 
-
 .comment-tile{
     border: 1px solid #303030;
     border-radius: 6px;
@@ -101,7 +93,6 @@ h1 {
     margin: 12px auto;
     background-color: #FFFDFB;
     color: black;
-
 }
 
 #comment-form{

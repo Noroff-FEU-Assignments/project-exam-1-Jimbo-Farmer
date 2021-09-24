@@ -2,6 +2,9 @@
     .post-tile{
         width: 45%;
     }
+    #spec-main {
+        padding-top: 24px;
+    }
     .full-blog img {
         max-width: 70%;
     }
@@ -101,16 +104,13 @@
         width: 31%;
     }
     form, input, textarea, .see-more, .button-container button {
-        font-size: 1.325rem;
+        font-size: 1.3125rem;
     }
     body {
         font-size: 1.3125rem;
     }
     .full-blog img {
         max-width: 60%;
-    }
-    .full-blog {
-        margin: 48px 48px 48px 0;
     }
     .about-text, .about h2 {
         padding: 0 15%;
@@ -142,10 +142,9 @@
         max-height: 90vh;
         top: 5vh;
     }
-    /* .about h2 {
-        font-size: 1.75rem;
-    } */
-    
+    #spec-main {
+        padding-top: 48px;
+    }
     .full-blog img {
         max-width: 50%;
     }
