@@ -8,9 +8,6 @@
     .full-blog img {
         max-width: 70%;
     }
-    .full-blog {
-        padding: 48px;
-    }
     .carousel {
         margin: 12px 36px;
     }
@@ -50,18 +47,14 @@
     .navbar {
         position: relative;
     }
-
     .nav-items {
         width: unset;
         height: unset;
         min-height: unset;
-        position: absolute;
         right: 0;
         top: unset;
         bottom: 0;
-        padding: 0;
     }
-
     .nav-items a, .nav-items .search-container{
         padding: 4px 8px;
         width: unset;
@@ -69,22 +62,14 @@
         height: 22px;
         margin: 0;
     }
-
-    
-
     .nav-items .search-container {
         max-width: 150px;         
     }
-
     #search-field, #search-go {
         padding: 2px;
     } 
     main {
         overflow: hidden;
-    }
-    
-    .about {
-        border-left: 2px solid white;
     }
     .page-headline img {
         visibility: visible;
@@ -92,16 +77,16 @@
     }
     .page-headline h1 {
         color: white;
-    }
-    .contact-main {
-        border-left: 2px solid white;
-    }
-    
+    }    
 }
 
 @media (min-width: 1000px){
     .post-tile{
         width: 31%;
+        max-width: 330px;
+    }
+    .nav-items .search-container {
+        max-width: 200px;         
     }
     form, input, textarea, .see-more, .button-container button {
         font-size: 1.3125rem;
@@ -121,9 +106,9 @@
     .carousel {
         margin: 12px 5%;
     }
-    .blog-list .posts .post-tile{
-        max-width: 330px;
-    }
+    .full-blog {
+        padding: 48px;
+    } 
 }
 
 @media (min-width: 1450px){
@@ -162,6 +147,9 @@
     }
     .about-text, .about h2 {
         padding: 0 20%;
+    }
+    .blog-post p {
+        padding: 0 15%;
     }
 }
 

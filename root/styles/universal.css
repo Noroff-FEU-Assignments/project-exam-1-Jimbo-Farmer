@@ -1,6 +1,5 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: white;
     color: white;
     margin: 0;
     position: relative;
@@ -15,11 +14,9 @@ header {
     text-transform: uppercase;
     border-bottom: 2px solid black;
     background-color: #303030;
-    
     position: sticky;
     top: 0;
-    z-index: 300;
-    
+    z-index: 300; 
 }
 
 #title {
@@ -75,7 +72,6 @@ header {
 }
 
 .navbar a {
-    text-decoration: none;
     color: white;
 }
 
@@ -225,6 +221,9 @@ main {
     100% {rotate: 360deg;}
 }
 
+a {
+    text-decoration: none;
+}
 
 p {
     font-family: Georgia, 'Times New Roman', Times, serif;

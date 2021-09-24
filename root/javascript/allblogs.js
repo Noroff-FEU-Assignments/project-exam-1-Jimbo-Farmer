@@ -66,6 +66,18 @@ for(let i = 0; i < categoryButtons.length; i++){
         let urlExt = event.target.value;
         tileQty = 8;
         getPosts(url+urlExt);
-        console.log("clicked")
     })
+}
+
+
+const filterLabels = document.querySelectorAll(".filter label")
+for(let i = 0; i < filterLabels.length; i++){
+    filterLabels[i].onkeydown = function(){
+        console.log(event);
+        if(event.key === "Enter"){
+            let urlExt = event.target.attributes[1].value;
+            tileQty = 8;
+            getPosts(url+urlExt);
+        }   
+    }
 }

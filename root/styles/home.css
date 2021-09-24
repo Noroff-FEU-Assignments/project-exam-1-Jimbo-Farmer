@@ -8,25 +8,10 @@ main {
     overflow: hidden; 
 }
 
-.posts.all {
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.blog-list .posts {
-    justify-content: unset;
-}
-
-.blog-list .posts .post-tile{
-    margin: 18px auto;
-
-}
-
 .tile-block {
     flex: 0 0 100%;
     display: flex;
-    transition: all 0.7s ease-in-out;
-    
+    transition: all 0.7s ease-in-out;  
 }
 
 .post-tile {
@@ -35,13 +20,11 @@ main {
     margin: 12px auto;
     color: black;
     background-color: #FFFDFB;   
-    /* display: flex;
-    flex-direction: column; */
     align-items: stretch;
     position: relative;
     border-radius: 6px;
     display: grid;
-    grid-template-rows: [title-start] 20% [title-end] 40% [image-end] 40% [excerpt-end];
+    grid-template-rows: [title-start] 22% [title-end] 40% [image-end] 38% [excerpt-end];
     width: 90%;
     max-width: 300px; 
     min-width: 250px; 
@@ -54,30 +37,23 @@ main {
 }
 
 .post-tile h2, .post-tile p {
-    padding: 0 12px;
+    padding: 12px;
 }
-
 
 .post-tile h2 {
     background-color: #303030;
     color: white;
-    /* min-height: 56px; */
     margin: 0;
-    padding: 12px;
     text-align: center;   
 }
 
 .post-tile img {
-    /* max-height: 250px; */
     max-width: 100%;
-    margin: 0 auto;
-    /* overflow: hidden; */
-    height: 100%;
+    margin: auto;
+    max-height: 100%;
 }
 
-a {
-    text-decoration: none;
-}
+/*--------------------------- specific to index.html --------------------------*/
 
 .carousel {
     position: relative;
@@ -92,29 +68,31 @@ a {
     border-radius: 50%;
     box-shadow: none;
     border: 1px solid black;
-    background-color: #FACE3C;
+    background-color: #FFFDFB;
     width: 48px;
     height: 48px;
-    top: 196px;
+    top: 40%;
     z-index: 100;
     padding: 0;
 }
+
 .previous:hover, .next:hover {
     cursor: pointer;
     border-width: 2px;
-    background-color: white;
+    background-color: #FACE3C;
 }
 
 .previous:focus, .next:focus {
     border-width: 2px;
     background-color: #FACE3C;
 }
+
 .next:focus {
     animation: pop 1s 1;
 }
 
 @keyframes pop {
-    0% {transform: scale(2.5)}    
+    0% {transform: scale(2)}    
     100% {transform: scale(1)}
 }
 
@@ -130,10 +108,12 @@ a {
 .next {
     right: 12px;
 }
+
 .previous {
     left: 12px;
     transform: rotate(180deg);
 }
+
 .arrow-top {
     transform: rotate(40deg);
     top: 16px;
@@ -147,18 +127,6 @@ a {
 .see-more {
     margin: 24px auto;
     display: block;
-}
-
-/* .see-more:hover, .see-more:focus {
-    cursor: pointer;
-    background-color: #027CC1;
-    color: white;
-} */
-
-.see-more:disabled {
-    background-color: lightgray;
-    opacity: 0.3;
-    cursor: auto;
 }
 
 .index-display {
@@ -178,8 +146,9 @@ a {
 .index-dot:hover {
     cursor: pointer;
 }
+
 .index-dot:focus {
-    background-color: #FACE3C;
+    animation: pop 1s 1;
 }
 
 .filled-in {
@@ -193,10 +162,12 @@ a {
     padding: 0 24px;
     text-align: center;
 }
+
 .welcome div {
     text-align: left;
     display: inline-block;
 }
+
 .welcome p {
     line-height: 2rem;
     width: 90%;
@@ -204,9 +175,13 @@ a {
 }
 
 
+/* ---------------------------specific to allblogs.html----------------------------- */
+
+
 .filter {
     text-align: center;
     color: black; 
+    margin: 24px auto;
 }
 
 .filter label {
@@ -215,8 +190,9 @@ a {
     padding: 4px 8px;
 }
 
-.filter label:hover {
-    border: 2px solid #303030;
+.filter label:hover, .filter label:focus {
+    border-bottom: 3px solid #303030;
+    cursor: pointer;
 }
 
 .filter input {
@@ -225,4 +201,15 @@ a {
 
 .filter input[type="radio"]:checked + label{
     background-color: #daa700;
+}
+
+/* -----------------specific to allblogs.html and search.html ----------------------*/
+
+.posts.all {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog-list .posts .post-tile{
+    margin: 24px auto;
 }

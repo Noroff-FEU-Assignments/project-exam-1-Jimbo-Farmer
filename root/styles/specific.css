@@ -53,6 +53,10 @@ img:focus {
     border: 2px solid white;
 }
 
+.modal-box.open img:hover{
+    cursor: auto;   
+}
+
 .full-blog p {
     line-height: 1.5em;
     text-align: left;

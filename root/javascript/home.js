@@ -178,15 +178,6 @@ async function getPosts(){
                 }
               }
         }
-        for(let i = 0; i < postTiles.length; i++){
-            postTiles[i].addEventListener("keydown", function(){
-                console.log(event);
-                if(event.key === "Enter"){
-                    console.log("pressed"+event)
-                    // window.location.href = this.href;
-                }
-            })
-        }
 
         //Touch ability for carousel
         let xTouchStart;
