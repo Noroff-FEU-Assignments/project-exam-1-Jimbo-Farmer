@@ -1,14 +1,11 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts/";
 const urlExt = id;
-
 const blogContainer = document.querySelector(".full-blog");
 const meta = document.querySelector("#meta-description");
 const loadingIndicator = document.querySelector(".loading");
-
 const form = document.querySelector("#comment-form");
 const submitButton = document.querySelector("#comment-submit");
 
@@ -27,16 +24,15 @@ async function getBlogPost(){
             <div class="modal-box"></div>
             </div>`;
             meta.content = output.excerpt.rendered.replace(/(<([^>]+)>)/gi, "");  //Thanks https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/      
-            
+            console.log(meta.content);
         }
         generateHtml();  
 
-        // modal js-------------
-
+        // code for modal -------------
         let images =[];
         if(document.querySelector(".wp-block-image")){                          //Check for images in the article before attempting to add them.
             images.push(document.querySelectorAll(".wp-block-image img")[0]);
-            const contentImages = document.querySelectorAll(".wp-block-image img");
+            const contentImages = document.querySelectorAll(".wp-block-image img"); // (as opposed to featured image)
             for(let i = 0; i < contentImages.length; i++){
                 contentImages[i].tabIndex = "0";                                //So that keyboard users can access the modal. (featured image is already tabbable)
             }
@@ -60,8 +56,6 @@ async function getBlogPost(){
         }
 
         function modal(){
-            console.log(this)
-            console.log(event.target)
             modalBox.innerHTML += `<img src="${event.target.src}" alt="${event.target.alt}">`;
             modalBox.classList.add("open"); 
             window.onclick = function(event){
@@ -137,6 +131,7 @@ async function getComments(postId){
         }
     } catch (error) {
         console.log(error)
+        commentsSection.innerHTML = `<h3>Failed to load comments</h3>`
     }
 }
 

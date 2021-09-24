@@ -2,12 +2,12 @@ const blogList = document.querySelector(".posts");
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 const loadMore = document.querySelector(".see-more");
 const loadingIndicator = document.querySelector(".loading");
-
 const categoryButtons = document.querySelectorAll(".category");
 const h1 = document.querySelector("h1");
-let urlExt = "";
 
+let urlExt = "";
 let tileQty = 8;
+
 async function getPosts(url){
     try { 
         const response = await fetch(url);
@@ -27,14 +27,10 @@ async function getPosts(url){
                 <h2>${output[i].title.rendered}</h2>
                 <img src="${output[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${output[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                 ${output[i].excerpt.rendered}
-                
                 </a>`
             }
-
         }
         generateHtml();  
-
-
 
         function generateExtraHtml(){
             let postsDone = document.querySelectorAll(".post-tile").length;
@@ -50,27 +46,21 @@ async function getPosts(url){
                 ${output[i].excerpt.rendered}
                 </a>`
             }
-            document.querySelectorAll(".post-tile")[postsDone].focus();  //set focus to the newly displayed posts so that keyboard users don't have to tab baack through all posts. 
-
+            document.querySelectorAll(".post-tile")[postsDone].focus();  //set focus to the newly displayed posts so that keyboard users don't have to tab back through all posts. 
         }
-        
         loadMore.onclick = function(){
             extraTileQty = 4;
             generateExtraHtml();
-        } 
-        
-        
-
+        }    
     } catch (error) {
         console.log(error)
-        blogList.classList.remove("loading");
+        loadingIndicator.classList.remove("loading");
         blogList.innerHTML =`<p>Apologies, an error has occurred</p>`;
     }
 }
 getPosts(url);
 
-
-
+// ------------------------------------filter by category---------------
 for(let i = 0; i < categoryButtons.length; i++){
     categoryButtons[i].addEventListener("click", function(){
         let urlExt = event.target.value;

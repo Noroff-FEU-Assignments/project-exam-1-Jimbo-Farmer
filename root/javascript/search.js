@@ -2,11 +2,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const searchText = params.get("search");
 let urlExt = "&search="+searchText;
-
 const results = document.querySelector(".posts");
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 const loadingIndicator = document.querySelector(".loading");
-
 const searchTerm = document.querySelector("#search-term");
 searchTerm.innerHTML = `"${searchText}"`;
 

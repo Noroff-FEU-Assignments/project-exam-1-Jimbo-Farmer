@@ -1,12 +1,10 @@
 const latestPosts = document.querySelector(".posts")
 const url = "https://frontendfarmer.com/ProjectExam/wp-json/wp/v2/posts?_embed&per_page=100";
 const loadingIndicator = document.querySelector(".loading");
-
 const previousButton = document.querySelector(".previous");
 const nextButton = document.querySelector(".next");
-previousButton.disabled = true;
-
 const indexDisplay = document.querySelector(".index-display")
+previousButton.disabled = true;
 
 let w = window.innerWidth;
 let tiles;
@@ -79,7 +77,7 @@ async function getPosts(){
         let positionIndex = 0;
                 
         const postTiles = document.querySelectorAll(".post-tile");
-        function updateTabIndex(){                                        //Makes hidden content 'untabbable' so keyboard users don't get lost. 
+        function updateTabIndex(){                                //Makes hidden content 'untabbable' so keyboard users don't get lost. 
             for(let i = 0; i < postTiles.length; i++){
                 if(postTiles[i].classList[1] ===`block_${positionIndex}`){
                     postTiles[i].tabIndex = 0;
@@ -94,11 +92,6 @@ async function getPosts(){
         const indexDots = document.querySelectorAll(".index-dot");
         indexDots[0].classList.add("filled-in");
 
-
-
-
-        
-
         function next(){
             if(nextButton.disabled){
                 return;
@@ -112,10 +105,7 @@ async function getPosts(){
                 for(let i= 0; i < tileBlocks.length; i++){
                     tileBlocks[i].style.transform = "translateX(-"+position+"px)";  //slide whole carousel      
                 }
-                console.log(position)
-                if(position === (blocks -1) * windowWidth){
-                    nextButton.disabled = true;
-                }
+                checkButtonDisable();
             } 
         }
 
@@ -130,12 +120,9 @@ async function getPosts(){
                 updateTabIndex();
                 nextButton.disabled = false;
                 for(let i= 0; i < tileBlocks.length; i++){
-                    tileBlocks[i].style.transform = "translateX(-"+position+"px)";
-                    
+                    tileBlocks[i].style.transform = "translateX(-"+position+"px)"; 
                 }
-                if(position === 0){
-                    previousButton.disabled = true;
-                }
+                checkButtonDisable();
             }   
         }
 
@@ -155,7 +142,7 @@ async function getPosts(){
             }
         }
 
-
+        // Code to operate carousel using 'index dots' below carousel
         for(let i = 0; i < indexDots.length; i++){
             indexDots[i].addEventListener("click", function(){
                 for(let j = 0; j < indexDots.length; j++){
@@ -199,18 +186,14 @@ async function getPosts(){
             })
             postTiles[i].addEventListener("touchend", function(){
                 xTouchEnd = event.changedTouches[0].clientX;
-                if((xTouchEnd - xTouchStart) < -30){
+                if((xTouchEnd - xTouchStart) < -40){
                     next();
-                } else if ((xTouchEnd - xTouchStart) > 30){
+                } else if ((xTouchEnd - xTouchStart) > 40){
                     previous();
 
                 }
-                
             })
-            
         }
-
-      
 
     } catch(error) {
         loadingIndicator.classList.remove("loading");

@@ -1,6 +1,5 @@
 const button = document.querySelector("button");
 const form = document.querySelector("#contact-form");
-
 const inputs = document.querySelectorAll("input");
 const notification = document.querySelector(".message");
 
@@ -15,8 +14,8 @@ const emailError = document.querySelector("#email-error");
 
 const message = document.querySelector("#message");
 const messageError = document.querySelector("#message-error");
-form.reset();
 
+form.reset();
 button.disabled = true;
 
 function checkFormComplete(){
@@ -30,7 +29,6 @@ function checkFormComplete(){
         button.disabled = true;
     }
 }
-
 nameInput.onblur = function(){
     if(lengthCheck(nameInput.value.trim().length, 5)){
         nameError.style.visibility = "hidden";
@@ -63,7 +61,6 @@ message.onblur = function(){
     }
     checkFormComplete();
 }
-
 message.onkeyup = checkFormComplete;
 nameInput.onkeyup = checkFormComplete;
 email.onkeyup = checkFormComplete;
@@ -89,7 +86,6 @@ form.onsubmit = async function(event){
     button.innerHTML = "Sending...";
     loadingIndicator.classList.add("loading");
     event.preventDefault();
-
     const response = await fetch(event.target.action, {
         method: event.target.method,
         body: new FormData(form),
