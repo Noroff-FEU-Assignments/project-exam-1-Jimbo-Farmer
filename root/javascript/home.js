@@ -45,7 +45,7 @@ async function getPosts(){
             for(let i = 0; i < blocks; i ++){
                 latestPosts.innerHTML += `<div class="tile-block">
                 </div>`
-                indexDisplay.innerHTML += `<div tabindex="0" class="index-dot">
+                indexDisplay.innerHTML += `<div tabindex="0" class="index-dot" aria-label="Carousel slide ${i}">
                 </div>`
             }
         }

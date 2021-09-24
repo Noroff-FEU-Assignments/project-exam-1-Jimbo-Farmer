@@ -106,9 +106,6 @@
     body {
         font-size: 1.3125rem;
     }
-    /* .bottom-banner-image { 
-        min-height: 400px;
-    } */
     .full-blog img {
         max-width: 60%;
     }
@@ -124,7 +121,9 @@
     .carousel {
         margin: 12px 5%;
     }
-    
+    .blog-list .posts .post-tile{
+        max-width: 330px;
+    }
 }
 
 @media (min-width: 1450px){
