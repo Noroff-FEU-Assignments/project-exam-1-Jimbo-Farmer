@@ -7,6 +7,8 @@ body {
     width: 50%;
     min-width: 300px;  
     max-width: 600px;  
+    background-color: #303030;
+    padding: 36px;
 }
 
 input, textarea{
@@ -25,9 +27,8 @@ input, textarea{
 
 .form-error {
     margin-bottom: 24px;
-    color: #d00;
+    color: #FCC;
     visibility: hidden;
-    background-color: white;
     margin: 4px auto 16px auto;
     padding: 2px;
     border-radius: 6px;

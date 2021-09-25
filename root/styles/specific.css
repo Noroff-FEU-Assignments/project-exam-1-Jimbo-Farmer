@@ -100,8 +100,13 @@ img:focus {
 }
 
 #comment-form{
-    margin-top: 48px;
-    border-top: 2px solid #FFFDFB;
+    background-color: #303030;
+    padding: 8px;
+}
+
+.existing-comments {
+    margin-bottom: 24px;
+    border-bottom: 2px solid #FFFDFB;
 }
 
 .comments h4{
